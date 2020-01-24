@@ -2,20 +2,25 @@ $background: #131417;
 $white: #ffffff;
 $number-btn-bk: #e0e0e7;
 $operator-btn-bk: #fb9419;
-$operator-btn-color: #ffffff;
-
+$function-btn-bk: #c4c3cc;
 :host {
   display: block;
   width: 320px;
-  height: 520px;
+  height: 450px;
   position: relative;
   background-color: $background;
   box-shadow: 0px 0px 20px 0px #aaa;
   border-radius: 0.7rem;
   overflow: hidden;
+  font-weight: 100;
   .display {
     height: 20%;
     color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    font-size: 8rem;
   }
 
   .wrapper {
@@ -26,6 +31,23 @@ $operator-btn-color: #ffffff;
     height: 80%;
     .btn {
       background: $number-btn-bk;
+      font-size: 3.1rem;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      &.function {
+        background: $function-btn-bk;
+      }
+      &.operator {
+        background: $operator-btn-bk;
+        color: $white;
+      }
+      &.zero {
+        grid-column: 1 / 3;
+        padding-left: 3rem;
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }
