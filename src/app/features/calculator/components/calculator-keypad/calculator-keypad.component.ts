@@ -14,9 +14,12 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalculatorKeypadComponent implements OnInit {
+  @Input() result: string;
+
   @Output() selectedNumber = new EventEmitter();
   @Output() selectedOperator = new EventEmitter();
   @Output() selectedFunction = new EventEmitter();
+  @Output() onReset = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}
@@ -29,5 +32,8 @@ export class CalculatorKeypadComponent implements OnInit {
   }
   handleSelectedOperator(operator) {
     this.selectedOperator.emit(operator);
+  }
+  handleReset() {
+    this.onReset.emit();
   }
 }

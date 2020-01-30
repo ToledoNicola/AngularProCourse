@@ -1,6 +1,6 @@
-<div class="display">0</div>
+<div class="display">{{ result }}</div>
 <div class="wrapper">
-  <div class="btn function">AC</div>
+  <div class="btn function" (click)="handleReset()">AC</div>
   <div class="btn function">±</div>
   <div class="btn function">%</div>
   <div class="btn operator" (click)="handleSelectedOperator('divisione')">

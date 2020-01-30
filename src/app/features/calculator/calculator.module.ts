@@ -6,7 +6,7 @@ import { CalculatorPageComponent } from "./calculator-page.component";
 import { CalculatorComponent } from "./containers/calculator/calculator.component";
 import { CalculatorKeypadComponent } from "./components/calculator-keypad/calculator-keypad.component";
 import { StoreModule } from "@ngrx/store";
-import * as fromCalculator from "./state/reducers/calculator.reducer";
+import * as fromCalculator from "./state/reducers";
 import { EffectsModule } from "@ngrx/effects";
 import { CalculatorEffects } from "./state/effects/calculator.effects";
 
@@ -21,7 +21,7 @@ import { CalculatorEffects } from "./state/effects/calculator.effects";
     CalculatorRoutingModule,
     StoreModule.forFeature(
       fromCalculator.calculatorFeatureKey,
-      fromCalculator.reducer
+      fromCalculator.reducers
     ),
     EffectsModule.forFeature([CalculatorEffects])
   ]

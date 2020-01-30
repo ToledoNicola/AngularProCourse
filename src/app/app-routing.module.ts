@@ -5,7 +5,14 @@ const routes: Routes = [
   {
     path: "calculator",
     loadChildren: () =>
-      import("./calculator/calculator.module").then(m => m.CalculatorModule)
+      import("./features/calculator/calculator.module").then(
+        m => m.CalculatorModule
+      )
+  },
+  {
+    path: "rxjs",
+    loadChildren: () =>
+      import("./features/rxjs/rxjs.module").then(m => m.RxjsModule)
   },
   {
     path: "",

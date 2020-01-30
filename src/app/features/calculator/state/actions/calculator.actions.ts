@@ -1,9 +1,11 @@
 import { createAction, props } from "@ngrx/store";
 
-export const selectedNumber = createAction(
-  "[Calculator] Selected Number",
+export const enteredNumber = createAction(
+  "[Calculator] Entereded Number",
   props<{ number: number }>()
 );
+export const reset = createAction("[Calculator] Reset");
+
 export const loadCalculators = createAction("[Calculator] Load Calculators");
 
 export const loadCalculatorsSuccess = createAction(

@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { CalculatorModule } from "./calculator/calculator.module";
 import { StoreModule } from "@ngrx/store";
 import { reducers, metaReducers } from "./store";
 import { StoreRouterConnectingModule, RouterState } from "@ngrx/router-store";
@@ -17,7 +16,6 @@ import { AppEffects } from "./app.effects";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CalculatorModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
