@@ -15,6 +15,13 @@ const routes: Routes = [
       import("./features/rxjs/rxjs.module").then(m => m.RxjsModule)
   },
   {
+    path: "performance",
+    loadChildren: () =>
+      import("./features/performance/performance.module").then(
+        m => m.PerformanceModule
+      )
+  },
+  {
     path: "",
     redirectTo: "calculator",
     pathMatch: "full"
