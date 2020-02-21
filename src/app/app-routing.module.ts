@@ -10,9 +10,9 @@ const routes: Routes = [
       )
   },
   {
-    path: "rxjs",
+    path: "reactive",
     loadChildren: () =>
-      import("./features/rxjs/rxjs.module").then(m => m.RxjsModule)
+      import("./features/reactive/rxjs.module").then(m => m.RxjsModule)
   },
   {
     path: "performance",
@@ -20,6 +20,11 @@ const routes: Routes = [
       import("./features/performance/performance.module").then(
         m => m.PerformanceModule
       )
+  },
+  {
+    path: "todo",
+    loadChildren: () =>
+      import("./features/todo/todo.module").then(m => m.TodoModule)
   },
   {
     path: "",
