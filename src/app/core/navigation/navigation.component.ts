@@ -4,11 +4,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
   selector: "app-navigation",
   template: `
     <ul>
-      <li routerLink="calculator">Calculator</li>
-      <li routerLink="todo">Todo</li>
-      <li routerLink="counter">Counter</li>
-      <li routerLink="performance">Performance</li>
-      <li routerLink="rxjs">Rxjs</li>
+      <li routerLink="calculator" routerLinkActive="active">Calculator</li>
+      <li routerLink="todo" routerLinkActive="active">Todo</li>
+      <li routerLink="counter" routerLinkActive="active">Counter</li>
+      <li routerLink="performance" routerLinkActive="active">Performance</li>
+      <li routerLink="rxjs" routerLinkActive="active">Rxjs</li>
     </ul>
   `,
   styleUrls: ["./navigation.component.scss"],
