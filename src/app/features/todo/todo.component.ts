@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-todo",
   template: `
-    <p>todo works!</p>
+    <app-todos> </app-todos>
   `,
   styleUrls: ["./todo.component.scss"]
 })
