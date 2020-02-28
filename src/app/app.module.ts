@@ -9,13 +9,16 @@ import { StoreRouterConnectingModule, RouterState } from "@ngrx/router-store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { environment } from "../environments/environment";
 import { EffectsModule } from "@ngrx/effects";
-import { AppEffects } from "./app.effects";
+import { EntityDataModule } from "@ngrx/data";
+import { entityConfig } from "./entity-metadata";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -33,7 +36,8 @@ import { AppEffects } from "./app.effects";
       maxAge: 25,
       logOnly: environment.production
     }),
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([]),
+    EntityDataModule.forRoot({}) // importare anche HttpClientModule altrimenti da errore
   ],
   providers: [],
   bootstrap: [AppComponent]

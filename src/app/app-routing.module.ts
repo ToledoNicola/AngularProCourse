@@ -30,7 +30,8 @@ const routes: Routes = [
     path: "",
     redirectTo: "calculator",
     pathMatch: "full"
-  }
+  },
+  { path: 'counter', loadChildren: () => import('./features/counter/counter.module').then(m => m.CounterModule) }
 ];
 
 @NgModule({

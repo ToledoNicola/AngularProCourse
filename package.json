@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,7 +19,9 @@
     "@angular/platform-browser": "~9.0.0-rc.7",
     "@angular/platform-browser-dynamic": "~9.0.0-rc.7",
     "@angular/router": "~9.0.0-rc.7",
+    "@ngrx/data": "^8.6.0",
     "@ngrx/effects": "^8.6.0",
+    "@ngrx/entity": "^8.6.0",
     "@ngrx/router-store": "^8.6.0",
     "@ngrx/schematics": "^8.6.0",
     "@ngrx/store": "^8.6.0",

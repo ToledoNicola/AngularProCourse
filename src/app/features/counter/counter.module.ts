@@ -1,0 +1,21 @@
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+
+import { CounterRoutingModule } from "./counter-routing.module";
+import { CounterPageComponent } from "./counter-page.component";
+import { StoreModule } from "@ngrx/store";
+import * as fromCounter from "./state/counter.reducer";
+import { EffectsModule } from "@ngrx/effects";
+import { CounterEffects } from "./state/counter.effects";
+import { CounterComponent } from "./containers/counter.component";
+
+@NgModule({
+  declarations: [CounterPageComponent, CounterComponent],
+  imports: [
+    CommonModule,
+    CounterRoutingModule,
+    StoreModule.forFeature(fromCounter.counterFeatureKey, fromCounter.reducer),
+    EffectsModule.forFeature([CounterEffects])
+  ]
+})
+export class CounterModule {}
