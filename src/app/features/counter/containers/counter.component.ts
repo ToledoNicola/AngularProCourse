@@ -1,21 +1,39 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import { selectNumber } from "../state/counter.selectors";
+import { increment, decrement, reset } from "../state/counter.actions";
 
 @Component({
-  selector: 'app-counter',
+  selector: "app-counter",
   template: `
-    <p>
-      counter works!
-    </p>
+    <h1>
+      {{ number$ | async }}
+    </h1>
+    <div class="buttons">
+      <button (click)="decrement()"><h2>-</h2></button>
+      <button (click)="increment()"><h2>+</h2></button>
+    </div>
+    <div class="buttons">
+      <button (click)="reset()"><h2>reset</h2></button>
+    </div>
   `,
-  styleUrls: ['./counter.component.scss'],
+  styleUrls: ["./counter.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CounterComponent implements OnInit {
+  number$: Observable<number> = this.store.select(selectNumber);
+  constructor(private store: Store<any>) {}
 
-  constructor(private store: Store<any>) { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  increment() {
+    this.store.dispatch(increment());
   }
-
+  decrement() {
+    this.store.dispatch(decrement());
+  }
+  reset() {
+    this.store.dispatch(reset());
+  }
 }
