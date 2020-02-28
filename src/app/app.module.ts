@@ -12,9 +12,10 @@ import { EffectsModule } from "@ngrx/effects";
 import { EntityDataModule } from "@ngrx/data";
 import { entityConfig } from "./entity-metadata";
 import { HttpClientModule } from "@angular/common/http";
+import { NavigationComponent } from './core/navigation/navigation.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavigationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

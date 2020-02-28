@@ -10,10 +10,15 @@ const routes: Routes = [
       )
   },
   {
-    path: "reactive",
+    path: "rxjs",
     loadChildren: () =>
       import("./features/reactive/rxjs.module").then(m => m.RxjsModule)
   },
+  // {
+  //   path: "reactive", //todo: da fare
+  //   loadChildren: () =>
+  //     import("./features/reactive/rxjs.module").then(m => m.RxjsModule)
+  // },
   {
     path: "performance",
     loadChildren: () =>
@@ -31,7 +36,11 @@ const routes: Routes = [
     redirectTo: "calculator",
     pathMatch: "full"
   },
-  { path: 'counter', loadChildren: () => import('./features/counter/counter.module').then(m => m.CounterModule) }
+  {
+    path: "counter",
+    loadChildren: () =>
+      import("./features/counter/counter.module").then(m => m.CounterModule)
+  }
 ];
 
 @NgModule({
