@@ -9,17 +9,36 @@ import { EffectsModule } from "@ngrx/effects";
 import { TodoEffects } from "./state/effects/todo.effects";
 import { TodosComponent } from "./containers/todos/todos.component";
 import { SharedModule } from "src/app/shared/shared.module";
-import { NewTodoComponent } from './components/new-todo/new-todo.component';
-import { TodosListComponent } from './components/todos-list/todos-list.component';
+import { NewTodoComponent } from "./components/new-todo/new-todo.component";
+import { TodosListComponent } from "./components/todos-list/todos-list.component";
+import { EntityDefinitionService, EntityDataService } from "@ngrx/data";
+import { entityMetadata } from "./entity-metadata";
+import { TodosDataService } from "./services/todos-data.service";
+import { TodoService } from "./services/todo.service";
 
 @NgModule({
-  declarations: [TodoComponent, TodosComponent, NewTodoComponent, TodosListComponent],
+  declarations: [
+    TodoComponent,
+    TodosComponent,
+    NewTodoComponent,
+    TodosListComponent
+  ],
   imports: [
     CommonModule,
     TodoRoutingModule,
     SharedModule,
     StoreModule.forFeature(fromTodo.todoFeatureKey, fromTodo.reducer),
     EffectsModule.forFeature([TodoEffects])
-  ]
+  ],
+  providers: [TodosDataService, TodoService]
 })
-export class TodoModule {}
+export class TodoModule {
+  constructor(
+    eds: EntityDefinitionService,
+    edatas: EntityDataService,
+    todoDataService: TodosDataService
+  ) {
+    eds.registerMetadataMap(entityMetadata);
+    edatas.registerService("Todo", todoDataService);
+  }
+}

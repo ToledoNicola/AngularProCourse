@@ -10,9 +10,11 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { environment } from "../environments/environment";
 import { EffectsModule } from "@ngrx/effects";
 import { EntityDataModule } from "@ngrx/data";
-import { entityConfig } from "./entity-metadata";
 import { HttpClientModule } from "@angular/common/http";
-import { NavigationComponent } from './core/navigation/navigation.component';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+
+import { NavigationComponent } from "./core/navigation/navigation.component";
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent],
@@ -20,6 +22,8 @@ import { NavigationComponent } from './core/navigation/navigation.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

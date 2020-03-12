@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "corso-angular-pro": {
+      "hosting": {
+        "calculator": [
+          "corso-angular-pro"
+        ]
+      }
+    }
+  }
+}

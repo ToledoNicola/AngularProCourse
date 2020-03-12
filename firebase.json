@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "calculator",
+      "public": "dist/calculator",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
