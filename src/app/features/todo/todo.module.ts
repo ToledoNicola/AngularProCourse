@@ -15,6 +15,7 @@ import { EntityDefinitionService, EntityDataService } from "@ngrx/data";
 import { entityMetadata } from "./entity-metadata";
 import { TodosDataService } from "./services/todos-data.service";
 import { TodoService } from "./services/todo.service";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TodoService } from "./services/todo.service";
     CommonModule,
     TodoRoutingModule,
     SharedModule,
+    ReactiveFormsModule,
     StoreModule.forFeature(fromTodo.todoFeatureKey, fromTodo.reducer),
     EffectsModule.forFeature([TodoEffects])
   ],
