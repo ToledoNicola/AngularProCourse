@@ -1,0 +1,21 @@
+ul {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+  li {
+    transition: ease-in 200ms; // per effetto quando viene applicata la classe active e rimossa
+    font-family: "Pacifico";
+    font-size: 1.9rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    outline: none; // per rimuovere il bordo giallo intorno al li
+  }
+}
+
+.active {
+  color: rgb(138, 1, 1);
+}

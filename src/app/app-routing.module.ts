@@ -3,13 +3,6 @@ import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: "calculator",
-    loadChildren: () =>
-      import("./features/calculator/calculator.module").then(
-        m => m.CalculatorModule
-      )
-  },
-  {
     path: "rxjs",
     loadChildren: () =>
       import("./features/reactive/rxjs.module").then(m => m.RxjsModule)
@@ -26,24 +19,21 @@ const routes: Routes = [
         m => m.PerformanceModule
       )
   },
-  {
-    path: "todo",
-    loadChildren: () =>
-      import("./features/todo/todo.module").then(m => m.TodoModule)
-  },
+
   {
     path: "redux",
     loadChildren: () =>
       import("./features/redux/redux.module").then(m => m.ReduxModule)
   },
   {
-    path: "counter",
+    path: "ngrx",
     loadChildren: () =>
-      import("./features/counter/counter.module").then(m => m.CounterModule)
+      import("./features/ngrx/ngrx.module").then(m => m.NgrxModule)
   },
+
   {
     path: "",
-    redirectTo: "calculator",
+    redirectTo: "ngrx",
     pathMatch: "full"
   }
 ];
