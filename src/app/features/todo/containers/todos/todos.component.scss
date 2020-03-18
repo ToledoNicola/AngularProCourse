@@ -1,4 +1,10 @@
 :host {
   width: 100%;
-  padding: 0 40px 0 40px;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  display: block;
+}
+app-new-todo {
+  margin-top: 1rem;
 }

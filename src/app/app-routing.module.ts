@@ -32,14 +32,19 @@ const routes: Routes = [
       import("./features/todo/todo.module").then(m => m.TodoModule)
   },
   {
-    path: "",
-    redirectTo: "calculator",
-    pathMatch: "full"
+    path: "redux",
+    loadChildren: () =>
+      import("./features/redux/redux.module").then(m => m.ReduxModule)
   },
   {
     path: "counter",
     loadChildren: () =>
       import("./features/counter/counter.module").then(m => m.CounterModule)
+  },
+  {
+    path: "",
+    redirectTo: "calculator",
+    pathMatch: "full"
   }
 ];
 
