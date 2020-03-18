@@ -9,6 +9,12 @@ import { FormControl, Validators } from "@angular/forms";
   styleUrls: ["./input.component.scss"]
 })
 export class InputComponent implements OnInit {
+  /**
+   *
+   * imlementare https://alligator.io/angular/custom-form-control/ per renderlo un'imput nativo
+   *
+   */
+
   testo = new FormControl("", Validators.required);
 
   constructor() {}

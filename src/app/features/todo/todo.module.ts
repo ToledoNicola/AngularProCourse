@@ -16,13 +16,15 @@ import { entityMetadata } from "./entity-metadata";
 import { TodosDataService } from "./services/todos-data.service";
 import { TodoService } from "./services/todo.service";
 import { ReactiveFormsModule } from "@angular/forms";
+import { TotTodosComponent } from './containers/tot-todos/tot-todos.component';
 
 @NgModule({
   declarations: [
     TodoComponent,
     TodosComponent,
     NewTodoComponent,
-    TodosListComponent
+    TodosListComponent,
+    TotTodosComponent
   ],
   imports: [
     CommonModule,

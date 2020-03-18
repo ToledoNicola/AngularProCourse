@@ -9,7 +9,8 @@ import { tap } from "rxjs/operators";
   selector: "app-todos",
   template: `
     <ng-container *ngIf="isLoaded$ | async; else elseTemplate">
-      <app-todos-list [todos]="todos$ | async"> </app-todos-list>
+      <app-todos-list [todos]="todos$ | async" (delete)="deleteTodo($event)">
+      </app-todos-list>
     </ng-container>
     <ng-template #elseTemplate>
       <h1>loading...</h1>
@@ -38,5 +39,8 @@ export class TodosComponent implements OnInit {
 
   addTodo(data) {
     this.todoService.add(data);
+  }
+  deleteTodo(entity: Todo) {
+    this.todoService.delete(entity.id);
   }
 }

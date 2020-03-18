@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Todo } from "../../models/todo";
 
 @Component({
@@ -6,8 +6,11 @@ import { Todo } from "../../models/todo";
   template: `
     <ul>
       <li *ngFor="let todo of todos">
-        <h3>{{ todo.description }}</h3>
-        <h2>{{ todo.isDone }}</h2>
+        <h3>
+          <span class="delete" (click)="delete.emit(todo)"> X </span>
+          {{ todo.description }}
+        </h3>
+        <input type="checkbox" [checked]="todo.isDone" />
       </li>
     </ul>
   `,
@@ -15,6 +18,7 @@ import { Todo } from "../../models/todo";
 })
 export class TodosListComponent implements OnInit {
   @Input() todos: Todo[];
+  @Output() delete = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}

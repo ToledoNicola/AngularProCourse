@@ -35,10 +35,14 @@ export class TodosDataService extends DefaultDataService<Todo> {
       );
   }
   add(data: Partial<Todo>) {
-    debugger;
     const id = this.db.createId();
     const todo = createTodo(id, data);
     this.db.doc("todos/" + id).set(todo);
     return of(todo);
+  }
+
+  delete(id: string) {
+    this.db.doc("todos/" + id).delete();
+    return of(id);
   }
 }
