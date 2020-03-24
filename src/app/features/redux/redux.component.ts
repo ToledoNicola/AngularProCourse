@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-redux",
   template: `
-    hola
+    <router-outlet> </router-outlet>
   `,
   styleUrls: ["./redux.component.scss"]
 })

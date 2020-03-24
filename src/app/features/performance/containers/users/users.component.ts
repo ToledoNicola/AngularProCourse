@@ -4,7 +4,7 @@ import { User } from "../../models/user";
 @Component({
   selector: "app-users",
   template: `
-    <app-input></app-input>
+    <app-input (add)="addUser($event)"></app-input>
     <app-users-list [data]="users"></app-users-list>
   `,
   styleUrls: ["./users.component.scss"]
@@ -71,4 +71,9 @@ export class UsersComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  addUser(name) {
+    // this.users = [...this.users, { id: this.users.length + 5, age: 48, name }]; // la lista SI aggiorna perche non cambia la referenza dell'array
+    this.users.push({ id: this.users.length + 5, age: 48, name }); // la lista NON si aggiorna perche non cambia la referenza dell'array
+    console.log("users:", this.users);
+  }
 }

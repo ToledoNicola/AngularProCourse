@@ -15,6 +15,8 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 
 import { NavigationComponent } from "./core/navigation/navigation.component";
+import { NgrxFakeModule } from "./features/redux/ngrx-fake/ngrx-fake.module";
+import { reducersFake } from "./store-fake";
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent],
@@ -22,6 +24,7 @@ import { NavigationComponent } from "./core/navigation/navigation.component";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgrxFakeModule.forRoot(reducersFake),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     StoreModule.forRoot(reducers, {
