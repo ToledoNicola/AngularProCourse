@@ -1,13 +1,9 @@
 {
   "hosting": [
     {
-      "target": "calculator",
-      "public": "dist/calculator",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
+      "target": "angularpro",
+      "public": "dist/angularpro",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",

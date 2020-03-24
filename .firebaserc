@@ -2,7 +2,7 @@
   "targets": {
     "corso-angular-pro": {
       "hosting": {
-        "calculator": [
+        "angularpro": [
           "corso-angular-pro"
         ]
       }
