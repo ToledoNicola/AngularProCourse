@@ -18,7 +18,7 @@ const memoizedfunction = memoize(value => {
 
 @Pipe({
   name: "pure",
-  pure: false // ad ogni changedetection esegue la funzione transform solo se il 'value' cambia
+  pure: true // ad ogni changedetection esegue la funzione transform solo se il 'value' cambia
 })
 export class PurePipe implements PipeTransform {
   transform(value: any, ...args: any[]): any {

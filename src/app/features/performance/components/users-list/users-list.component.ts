@@ -17,7 +17,8 @@ import { User } from "../../models/user";
     <ul>
       <li *ngFor="let user of users; trackBy: trackId">
         <!-- {{ user.name }} <span> {{ pure(user.age) }} </span> -->
-        {{ user.name }} <span> {{ user.age | pure }} </span>
+        <p>{{ user.name }}</p>
+        <span> {{ user.age | pure }} </span>
       </li>
     </ul>
   `,

@@ -3,7 +3,10 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-performance",
   template: `
-    <app-users></app-users>
+    <div class="row">
+      <app-users></app-users>
+      <app-users2></app-users2>
+    </div>
   `,
   styleUrls: ["./performance.component.scss"]
 })

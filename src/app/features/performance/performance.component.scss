@@ -2,4 +2,9 @@
   display: grid;
   place-items: center;
   height: 100%;
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
 }
