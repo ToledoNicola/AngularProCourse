@@ -6,9 +6,9 @@ import { CalculatorPageComponent } from "./calculator-page.component";
 import { CalculatorComponent } from "./containers/calculator/calculator.component";
 import { CalculatorKeypadComponent } from "./components/calculator-keypad/calculator-keypad.component";
 import { StoreModule } from "@ngrx/store";
-import * as fromCalculator from "./state/reducers";
+import * as fromCalculator from "./store/reducers";
 import { EffectsModule } from "@ngrx/effects";
-import { CalculatorEffects } from "./state/effects/calculator.effects";
+import { CalculatorEffects } from "./store/effects/calculator.effects";
 
 @NgModule({
   declarations: [

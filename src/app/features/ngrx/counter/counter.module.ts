@@ -4,9 +4,9 @@ import { CommonModule } from "@angular/common";
 import { CounterRoutingModule } from "./counter-routing.module";
 import { CounterPageComponent } from "./counter-page.component";
 import { StoreModule } from "@ngrx/store";
-import * as fromCounter from "./state/counter.reducer";
+import * as fromCounter from "./store/counter.reducer";
 import { EffectsModule } from "@ngrx/effects";
-import { CounterEffects } from "./state/counter.effects";
+import { CounterEffects } from "./store/counter.effects";
 import { CounterComponent } from "./containers/counter.component";
 
 @NgModule({

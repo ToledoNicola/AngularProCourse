@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
-import { selectNumber } from "../state/counter.selectors";
-import { increment, decrement, reset } from "../state/counter.actions";
+import { selectNumber } from "../store/counter.selectors";
+import { increment, decrement, reset } from "../store/counter.actions";
 
 @Component({
   selector: "app-counter",

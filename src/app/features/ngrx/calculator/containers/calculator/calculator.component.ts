@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { AppState } from "src/app/store";
-import { CalculatorActions } from "../../state/actions";
+import { CalculatorActions } from "../../store/actions";
 import { Observable } from "rxjs";
-import { selectResult } from "../../state/selectors/calculator.selectors";
+import { selectResult } from "../../store/selectors/calculator.selectors";
 
 @Component({
   selector: "app-calculator",

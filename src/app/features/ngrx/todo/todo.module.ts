@@ -4,9 +4,9 @@ import { CommonModule } from "@angular/common";
 import { TodoRoutingModule } from "./todo-routing.module";
 import { TodoComponent } from "./todo.component";
 import { StoreModule } from "@ngrx/store";
-import * as fromTodo from "./state/reducers/todo.reducer";
+import * as fromTodo from "./store/reducers/todo.reducer";
 import { EffectsModule } from "@ngrx/effects";
-import { TodoEffects } from "./state/effects/todo.effects";
+import { TodoEffects } from "./store/effects/todo.effects";
 import { TodosComponent } from "./containers/todos/todos.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { NewTodoComponent } from "./components/new-todo/new-todo.component";
@@ -16,7 +16,7 @@ import { entityMetadata } from "./entity-metadata";
 import { TodosDataService } from "./services/todos-data.service";
 import { TodoService } from "./services/todo.service";
 import { ReactiveFormsModule } from "@angular/forms";
-import { TotTodosComponent } from './containers/tot-todos/tot-todos.component';
+import { TotTodosComponent } from "./containers/tot-todos/tot-todos.component";
 
 @NgModule({
   declarations: [
