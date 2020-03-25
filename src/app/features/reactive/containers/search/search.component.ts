@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable, of } from "../../rxjs";
-import { map } from "../../rxjs/operators";
+import { Observable, of } from "../../rxjs-fake";
+import { map } from "../../rxjs-fake/operators";
 
 @Component({
   selector: "app-search",
