@@ -5,7 +5,8 @@ import { Component, OnInit } from "@angular/core";
   template: `
     <div>
       <app-tot-todos></app-tot-todos>
-      <app-todos> </app-todos>
+      <!-- <app-todos> </app-todos> -->
+      <app-todos-with-entity></app-todos-with-entity>
     </div>
   `,
   styleUrls: ["./todo.component.scss"]

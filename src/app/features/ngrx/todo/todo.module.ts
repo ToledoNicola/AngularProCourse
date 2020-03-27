@@ -13,10 +13,11 @@ import { NewTodoComponent } from "./components/new-todo/new-todo.component";
 import { TodosListComponent } from "./components/todos-list/todos-list.component";
 import { EntityDefinitionService, EntityDataService } from "@ngrx/data";
 import { entityMetadata } from "./entity-metadata";
-import { TodosDataService } from "./services/todos-data.service";
+import { TodosDataService } from "./data/todos-data.service";
 import { TodoService } from "./services/todo.service";
 import { ReactiveFormsModule } from "@angular/forms";
 import { TotTodosComponent } from "./containers/tot-todos/tot-todos.component";
+import { TodosWithEntityComponent } from './containers/todos-with-entity/todos-with-entity.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TotTodosComponent } from "./containers/tot-todos/tot-todos.component";
     TodosComponent,
     NewTodoComponent,
     TodosListComponent,
-    TotTodosComponent
+    TotTodosComponent,
+    TodosWithEntityComponent
   ],
   imports: [
     CommonModule,

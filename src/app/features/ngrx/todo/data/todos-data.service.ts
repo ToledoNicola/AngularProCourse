@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { DefaultDataService, HttpUrlGenerator } from "@ngrx/data";
 import { Todo } from "../models/todo";
 import { HttpClient } from "@angular/common/http";
-import { map, tap } from "rxjs/operators";
-import { Observable, of } from "rxjs";
+import { map, tap, catchError } from "rxjs/operators";
+import { Observable, of, throwError } from "rxjs";
 
 import { AngularFirestore } from "@angular/fire/firestore";
 import "firebase/firestore"; // obbligatorio per usare AngularFirestore
@@ -30,8 +30,11 @@ export class TodosDataService extends DefaultDataService<Todo> {
       .collection("todos")
       .get()
       .pipe(
-        map(snap => snap.docs.map(doc => ({ ...doc.data() } as Todo))) // l'id è nel documento
+        map(snap => snap.docs.map(doc => ({ ...doc.data() } as Todo))), // l'id è nel documento
         // map(snap => snap.docs.map(doc => ({ id: doc.id, ...doc.data() } as Todo))) // se il documento non ha l'id allora devo recuperarlo dal metadata
+        catchError(error => {
+          return throwError(error);
+        })
       );
   }
   add(data: Partial<Todo>) {
