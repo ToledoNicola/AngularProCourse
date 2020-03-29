@@ -1,5 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -12,6 +14,7 @@ import { NavigationComponent } from "./core/navigation/navigation.component";
 import { NgrxFakeModule } from "./features/redux/ngrx-fake/ngrx-fake.module";
 import { reducersFake } from "./store-fake";
 import { NgrxModule } from "./store/ngrx.module";
+import { AuthModule } from "./core/auth/auth.module";
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent],
@@ -22,7 +25,10 @@ import { NgrxModule } from "./store/ngrx.module";
     NgrxFakeModule.forRoot(reducersFake),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    NgrxModule
+    NgrxModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

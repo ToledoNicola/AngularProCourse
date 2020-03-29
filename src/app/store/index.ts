@@ -1,10 +1,7 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from "@ngrx/store";
+/**
+ * global state visibile da tutti i moduli
+ */
+import { ActionReducerMap, MetaReducer } from "@ngrx/store";
 import { environment } from "../../environments/environment";
 import { routerReducer, RouterReducerState } from "@ngrx/router-store";
 

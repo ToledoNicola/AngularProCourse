@@ -1,5 +1,4 @@
 import { NgModule, ModuleWithProviders } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { StoreService } from "./store.service";
 import { ReducersStore } from "./tokens";
 

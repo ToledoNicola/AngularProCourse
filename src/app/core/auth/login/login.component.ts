@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "app-redux",
+  selector: "app-login",
   template: `
-    <router-outlet> </router-outlet>
+    <p>loginnn</p>
   `,
   styles: []
 })
-export class ReduxComponent implements OnInit {
+export class LoginComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}

@@ -5,11 +5,26 @@ import { Component, OnInit } from "@angular/core";
   template: `
     <div>
       <app-tot-todos></app-tot-todos>
-      <!-- <app-todos> </app-todos> -->
+      <!-- con Data -->
+      <!-- <app-todos> </app-todos>  -->
+
+      <!-- con entity -->
       <app-todos-with-entity></app-todos-with-entity>
     </div>
   `,
-  styleUrls: ["./todo.component.scss"]
+  styles: [
+    `
+      :host {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        app-todos {
+          margin-top: 2rem;
+        }
+      }
+    `
+  ]
 })
 export class TodoComponent implements OnInit {
   constructor() {}

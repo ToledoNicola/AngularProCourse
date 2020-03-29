@@ -33,7 +33,7 @@ const routes: Routes = [
 
   {
     path: "",
-    redirectTo: "ngrx",
+    redirectTo: "performance",
     pathMatch: "full"
   }
 ];

@@ -4,7 +4,6 @@ import { CommonModule } from "@angular/common";
 import { TodoRoutingModule } from "./todo-routing.module";
 import { TodoComponent } from "./todo.component";
 import { StoreModule } from "@ngrx/store";
-import * as fromTodo from "./store/reducers/todo.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { TodoEffects } from "./store/effects/todo.effects";
 import { TodosComponent } from "./containers/todos/todos.component";
@@ -17,7 +16,8 @@ import { TodosDataService } from "./data/todos-data.service";
 import { TodoService } from "./services/todo.service";
 import { ReactiveFormsModule } from "@angular/forms";
 import { TotTodosComponent } from "./containers/tot-todos/tot-todos.component";
-import { TodosWithEntityComponent } from './containers/todos-with-entity/todos-with-entity.component';
+import { TodosWithEntityComponent } from "./containers/todos-with-entity/todos-with-entity.component";
+import { reducersMap, todoFeatureKey } from "./store/reducers";
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { TodosWithEntityComponent } from './containers/todos-with-entity/todos-w
     TodoRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    StoreModule.forFeature(fromTodo.todoFeatureKey, fromTodo.reducer),
+    StoreModule.forFeature(todoFeatureKey, reducersMap),
     EffectsModule.forFeature([TodoEffects])
   ],
   providers: [TodosDataService, TodoService]
