@@ -4,41 +4,17 @@ import { AuthGuard } from "./core/auth/auth.guard";
 
 const routes: Routes = [
   {
-    path: "rxjs",
+    path: "dashboard",
     loadChildren: () =>
-      import("./features/reactive/rxjs.module").then(m => m.RxjsModule),
-    canActivate: [AuthGuard]
-  },
-  // {
-  //   path: "reactive", //todo: da fare
-  //   loadChildren: () =>
-  //     import("./features/reactive/rxjs.module").then(m => m.RxjsModule)
-  // },
-  {
-    path: "performance",
-    loadChildren: () =>
-      import("./features/performance/performance.module").then(
-        m => m.PerformanceModule
+      import("./features/dashboard/dashboard.module").then(
+        m => m.DashboardModule
       ),
-    canActivate: [AuthGuard]
-  },
-
-  {
-    path: "redux",
-    loadChildren: () =>
-      import("./features/redux/redux.module").then(m => m.ReduxModule),
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "ngrx",
-    loadChildren: () =>
-      import("./features/ngrx/ngrx.module").then(m => m.NgrxModule),
-    canActivate: [AuthGuard]
+    canLoad: [AuthGuard]
   },
 
   {
     path: "",
-    redirectTo: "performance",
+    redirectTo: "dashboard",
     pathMatch: "full"
   }
 ];

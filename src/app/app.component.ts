@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { AppState } from "./store";
+import { isLogged } from "./core/auth/store/auth.selectors";
 
 @Component({
   selector: "app-root",
   template: `
-    <app-navigation></app-navigation>
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet> </router-outlet>
   `,
-  styleUrls: ["./app.component.scss"]
+  styles: []
 })
 export class AppComponent {}

@@ -10,14 +10,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 
-import { NavigationComponent } from "./core/navigation/navigation.component";
 import { NgrxFakeModule } from "./features/redux/ngrx-fake/ngrx-fake.module";
 import { reducersFake } from "./store-fake";
 import { NgrxModule } from "./store/ngrx.module";
 import { AuthModule } from "./core/auth/auth.module";
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
