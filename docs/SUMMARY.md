@@ -32,5 +32,5 @@
 
 ## Forms
 
-* [Custom Input](forms/custom-input.md)
+* [Custom Form Control](forms/custom-input.md)
 
