@@ -1,5 +1,5 @@
 ---
-description: Decoratori per modificare il comportamento dell'injection
+description: Decoratori per modificare la visibilita dell'injection token
 ---
 
 # Decoratori
