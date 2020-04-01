@@ -1,32 +1,47 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Angular Pro il corso](README.md)
 
 ## Performance
 
+* [Immutabilità](performance/immutabilita.md)
+* [Change detection](performance/change-detection/README.md)
+  * [OnPush](performance/change-detection/onpush.md)
 * [Smart & Dump components](performance/smart-and-dump-components.md)
 * [Pure Pipe](performance/pure-pipe.md)
-* [Immutabilità](performance/immutabilita.md)
-* [OnPush](performance/onpush.md)
 * [Memoization](performance/memoization.md)
-
-## Redux
-
-* [Da Zero](redux/da-zero/README.md)
-  * [Untitled](redux/da-zero/untitled/README.md)
-    * [Store](redux/da-zero/untitled/store.md)
 
 ## Rxjs
 
 * [Da Zero](rxjs/scratch.md)
 * [Observables](rxjs/observables.md)
 
-## NGRX
+## Akita
 
-* [Untitled](ngrx/untitled.md)
+## NGRX <a id="redux"></a>
+
+* [Da Zero](redux/da-zero/README.md)
+  * [Untitled](redux/da-zero/untitled/README.md)
+    * [Store](redux/da-zero/untitled/store.md)
+* [Store](redux/store/README.md)
+  * [Actions](redux/store/actions.md)
+  * [Reducers](redux/store/reducers.md)
+  * [Selectors](redux/store/selectors.md)
+* [Effects](redux/effects.md)
+* [Entity](redux/entity.md)
+* [Data](redux/data.md)
+
+## di
+
+* [Decoratori](di/direttive.md)
+* [Tree-shakable providers](di/tree-shakable-providers.md)
 
 ## Style
 
 * [Shadow dom](style/shadow-dom.md)
 * [:host](style/host.md)
+
+## Forms
+
+* [Custom Form Control](forms/custom-input.md)
 
