@@ -31,6 +31,10 @@
 * [Entity](redux/entity.md)
 * [Data](redux/data.md)
 
+## di
+
+* [Direttive](di/direttive.md)
+
 ## Style
 
 * [Shadow dom](style/shadow-dom.md)
