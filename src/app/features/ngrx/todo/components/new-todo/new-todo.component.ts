@@ -6,11 +6,12 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   template: `
     <form [formGroup]="form" (submit)="create(form.value)">
       <!-- <app-input></app-input> -->
-      <input
+      <!-- <input
         type="text"
         placeholder="Scrivi..."
         formControlName="description"
-      />
+      /> -->
+      <app-input></app-input>
 
       <button type="submit"><h1>+</h1></button>
     </form>

@@ -6,10 +6,10 @@ import { Component, OnInit } from "@angular/core";
     <div>
       <app-tot-todos></app-tot-todos>
       <!-- con Data -->
-      <!-- <app-todos> </app-todos>  -->
+      <app-todos> </app-todos>
 
       <!-- con entity -->
-      <app-todos-with-entity></app-todos-with-entity>
+      <!-- <app-todos-with-entity></app-todos-with-entity> -->
     </div>
   `,
   styles: [

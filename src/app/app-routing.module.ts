@@ -8,8 +8,8 @@ const routes: Routes = [
     loadChildren: () =>
       import("./features/dashboard/dashboard.module").then(
         m => m.DashboardModule
-      ),
-    canLoad: [AuthGuard]
+      )
+    // canLoad: [AuthGuard]
   },
 
   {

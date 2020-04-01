@@ -1,24 +1,28 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable, of } from "../../rxjs-fake";
 import { map } from "../../rxjs-fake/operators";
+import { FormControl } from "@angular/forms";
 
 @Component({
   selector: "app-search",
   template: `
-    <app-input-text></app-input-text>
+    <!-- <app-input-text></app-input-text> -->
+    <app-input [formControl]="testo"></app-input>
   `,
   styleUrls: ["./search.component.scss"]
 })
 export class SearchComponent implements OnInit {
-  ob$ = of(1, 2, 3, 4, 5);
+  testo = new FormControl("fofoffo");
+  // ob$ = of(1, 2, 3, 4, 5);
   constructor() {}
 
   ngOnInit() {
+    this.testo.valueChanges.subscribe(console.log);
     // this.ob$.subscribe(console.log);
     // setTimeout(() => {
     //   this.ob$.subscribe(console.log);
     // }, 2000);
-    this.ob$.subscribe({ next: console.log });
+    // this.ob$.subscribe({ next: console.log });
 
     // let myOb$ = new Observable(observer => {
     //   setTimeout(() => {
