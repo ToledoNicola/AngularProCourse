@@ -6,7 +6,6 @@ import { FormControl } from "@angular/forms";
 @Component({
   selector: "app-search",
   template: `
-    <!-- <app-input-text></app-input-text> -->
     <app-input [formControl]="testo"></app-input>
   `,
   styleUrls: ["./search.component.scss"]

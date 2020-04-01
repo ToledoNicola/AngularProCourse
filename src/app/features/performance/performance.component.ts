@@ -8,7 +8,20 @@ import { Component, OnInit } from "@angular/core";
       <app-users2></app-users2>
     </div>
   `,
-  styleUrls: ["./performance.component.scss"]
+  styles: [
+    `
+      :host {
+        display: grid;
+        place-items: center;
+        height: 100%;
+      }
+      .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+    `
+  ]
 })
 export class PerformanceComponent implements OnInit {
   constructor() {}

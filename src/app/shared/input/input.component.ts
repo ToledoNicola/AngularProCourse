@@ -47,7 +47,7 @@ export class InputComponent implements ControlValueAccessor {
    * rendere il piu pulito possibile il ControlValueAccessor e
    * far vedere come si comporta da ponte tra il form angular e il componente
    */
-  value: string;
+  value: string = "";
 
   // Allow the input to be disabled, and when it is make it somewhat transparent.
   @Input() disabled = false;

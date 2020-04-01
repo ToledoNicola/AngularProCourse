@@ -5,13 +5,12 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   selector: "app-new-todo",
   template: `
     <form [formGroup]="form" (submit)="create(form.value)">
-      <!-- <app-input></app-input> -->
       <!-- <input
         type="text"
         placeholder="Scrivi..."
         formControlName="description"
       /> -->
-      <app-input></app-input>
+      <app-input formControlName="description"></app-input>
 
       <button type="submit"><h1>+</h1></button>
     </form>
