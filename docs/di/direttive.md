@@ -1,8 +1,8 @@
 ---
-description: Direttive per modificare il comportamento dalla DI
+description: Decoratori per modificare il comportamento dell'injection
 ---
 
-# Direttive
+# Decoratori
 
 ## Default 
 

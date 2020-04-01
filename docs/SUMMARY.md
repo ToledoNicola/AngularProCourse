@@ -33,7 +33,7 @@
 
 ## di
 
-* [Direttive](di/direttive.md)
+* [Decoratori](di/direttive.md)
 
 ## Style
 
