@@ -13,8 +13,8 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
     <input
       type="text"
       placeholder="Scrivi..."
-      [value]="value"
-      (input)="onChange($event.target.value)"
+      [(ngModel)]="value"
+      (ngModelChange)="onChange($event)"
     />
   `,
   styles: [
@@ -64,6 +64,10 @@ export class InputComponent implements ControlValueAccessor {
   // Allows Angular to update the model (rating).
   // Update the model and changes needed for the view here.
   writeValue(text: string): void {
+    if (text == null) {
+      this.value = "";
+      return;
+    }
     this.value = text;
   }
 

@@ -30,5 +30,6 @@ export class NewTodoComponent implements OnInit {
 
   create(data) {
     this.newTodo.emit(data);
+    this.form.reset({ description: "" });
   }
 }

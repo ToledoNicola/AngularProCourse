@@ -7,6 +7,7 @@ import { Observable, of, throwError } from "rxjs";
 
 import { AngularFirestore } from "@angular/fire/firestore";
 import "firebase/firestore"; // obbligatorio per usare AngularFirestore
+import { FirebaseError } from "firebase";
 
 function createTodo(id: string, entity: Partial<Todo>): Todo {
   return {
@@ -32,8 +33,8 @@ export class TodosDataService extends DefaultDataService<Todo> {
       .pipe(
         map(snap => snap.docs.map(doc => ({ ...doc.data() } as Todo))), // l'id è nel documento
         // map(snap => snap.docs.map(doc => ({ id: doc.id, ...doc.data() } as Todo))) // se il documento non ha l'id allora devo recuperarlo dal metadata
-        catchError(error => {
-          return throwError(error);
+        catchError((error: FirebaseError) => {
+          return throwError({ error: error.message }); //TODO! non funziona DATA non recupera l'errore
         })
       );
   }
