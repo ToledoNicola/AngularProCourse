@@ -9,7 +9,8 @@ ul {
   list-style: none;
   li {
     transition: ease-in 200ms; // per effetto quando viene applicata la classe active e rimossa
-    font-family: "Pacifico";
+    font-family: "Source Sans Pro", "Pacifico";
+    font-weight: 600;
     font-size: 1.9rem;
     margin-left: 1rem;
     cursor: pointer;

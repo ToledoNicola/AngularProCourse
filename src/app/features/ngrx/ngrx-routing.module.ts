@@ -23,6 +23,11 @@ const routes: Routes = [
           import("./counter/counter.module").then(m => m.CounterModule)
       },
       {
+        path: "movies",
+        loadChildren: () =>
+          import("./movies/movies.module").then(m => m.MoviesModule)
+      },
+      {
         path: "",
         redirectTo: "counter",
         pathMatch: "full"

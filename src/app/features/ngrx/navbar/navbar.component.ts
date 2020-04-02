@@ -7,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
       <li routerLink="counter" routerLinkActive="active">Counter</li>
       <li routerLink="todo" routerLinkActive="active">Todo</li>
       <li routerLink="calculator" routerLinkActive="active">Calculator</li>
+      <li routerLink="movies" routerLinkActive="active">Movies</li>
     </ul>
   `,
   styleUrls: ["./navbar.component.scss"]
