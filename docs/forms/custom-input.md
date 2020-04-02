@@ -40,11 +40,29 @@ interface ControlValueAccessor {
 
 The `writeValue` method is used by `formControl` to set the value to the native form control. The `registerOnChange` method is used by `formControl` to register a **callback** that is expected to be triggered every time the native form control is updated. It is your responsibility to **pass the updated value to this callback** so that the value of respective Angular form control is updated. The `registerOnTouched` method is used to indicate that a user interacted with a control.
 
+è importante capire che `controlValueAccessor` **interagisce sempre con un form control** creato esplicitamente \(reactive forms\) o implicitamente \(template driven\).
+
+Angular implementa gli accessor con valore predefinito per tutti gli elementi del modulo nativo standard:
+
+```text
++------------------------------------+----------------------+
+|              Accessor              |     Form Element     |
++------------------------------------+----------------------+
+| DefaultValueAccessor               | input, textarea      |
+| CheckboxControlValueAccessor       | input[type=checkbox] |
+| NumberValueAccessor                | input[type=number]   |
+| RadioControlValueAccessor          | input[type=radio]    |
+| RangeValueAccessor                 | input[type=range]    |
+| SelectControlValueAccessor         | select               |
+| SelectMultipleControlValueAccessor | select[multiple]     |
++------------------------------------+----------------------+
+```
+
 ```typescript
 @Component({
   selector: 'my-app',
   template: `
-      <input [formControl]="ctrl">
+      <app-input [formControl]="ctrl">
   `
 })
 export class AppComponent {
@@ -116,6 +134,12 @@ So let’s first define the provider:
 })
 export class InputComponent implements ControlValueAccessor {...}
 ```
+
+{% hint style="info" %}
+il componente definendo `NG_VALUE_ACCESSOR` va a sovrascrivere il valore di default che varia in base al tipo di input \(vedi sopra\), e quindi la direttiva `formControl` essendo una direttiva \(figlio\)  andrà a recuperare il `NG_VALUE_ACCESSOR` dall' injector del componente \(padre\)
+{% endhint %}
+
+
 
 {% hint style="info" %}
 #### perchè `forwardRef` e `multi:true` ?
