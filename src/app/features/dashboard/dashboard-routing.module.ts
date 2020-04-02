@@ -38,6 +38,11 @@ const routes: Routes = [
         path: "ngrx",
         loadChildren: () =>
           import("../ngrx/ngrx.module").then(m => m.NgrxModule)
+      },
+      {
+        path: "",
+        redirectTo: "performance",
+        pathMatch: "full"
       }
     ]
   }

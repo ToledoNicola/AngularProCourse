@@ -9,6 +9,8 @@ import { PurePipe } from "./pipes/pure.pipe";
 import { ReactiveFormsModule } from "@angular/forms";
 import { Users2Component } from "./containers/users2/users2.component";
 import { SharedModule } from "src/app/shared/shared.module";
+import { ProvaDirective } from "./directive/prova.directive";
+import { PippoComponent, ProvaToken } from "./components/pippo/pippo.component";
 
 @NgModule({
   declarations: [
@@ -16,13 +18,21 @@ import { SharedModule } from "src/app/shared/shared.module";
     UsersComponent,
     UsersListComponent,
     PurePipe,
-    Users2Component
+    Users2Component,
+    ProvaDirective,
+    PippoComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     PerformanceRoutingModule,
     SharedModule
+  ],
+  providers: [
+    {
+      provide: ProvaToken,
+      useValue: { nome: "da modulo" }
+    }
   ],
   bootstrap: [PerformanceComponent]
 })

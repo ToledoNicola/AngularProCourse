@@ -3,6 +3,9 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-performance",
   template: `
+    <!-- per provare la visibilita della DI tra moduli, component, direttiva -->
+    <!-- <app-pippo appProva></app-pippo> -->
+
     <div class="row">
       <app-users></app-users>
       <app-users2></app-users2>
