@@ -11,7 +11,7 @@ import { FormControl } from "@angular/forms";
   styleUrls: ["./search.component.scss"]
 })
 export class SearchComponent implements OnInit {
-  testo = new FormControl("fofoffo");
+  testo = new FormControl("");
   // ob$ = of(1, 2, 3, 4, 5);
   constructor() {}
 

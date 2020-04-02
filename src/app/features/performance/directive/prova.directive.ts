@@ -6,7 +6,7 @@ import {
   Host,
   Optional
 } from "@angular/core";
-import { ProvaToken } from "../components/pippo/pippo.component";
+import { ProvaToken } from "../components/pippo.component";
 
 @Directive({
   selector: "[appProva]",

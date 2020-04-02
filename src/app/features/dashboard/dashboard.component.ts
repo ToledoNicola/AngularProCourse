@@ -10,10 +10,10 @@ import { Component, OnInit } from "@angular/core";
   `,
   styles: [
     `
-      .container {
-        padding-top: 5rem;
+      :host {
+        display: grid;
         height: 100%;
-        width: 100%;
+        grid-template-rows: 5rem 1fr;
       }
     `
   ]

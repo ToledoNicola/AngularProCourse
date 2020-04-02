@@ -4,7 +4,7 @@ import { User } from "../../models/user";
 @Component({
   selector: "app-users",
   template: `
-    <app-input (add)="addUser($event)"></app-input>
+    <app-new-name (add)="addUser($event)"></app-new-name>
     <app-users-list [data]="users"></app-users-list>
   `,
   styleUrls: ["./users.component.scss"]

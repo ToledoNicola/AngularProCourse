@@ -4,7 +4,9 @@ import { Component, OnInit } from "@angular/core";
   selector: "app-ngrx",
   template: `
     <app-navbar></app-navbar>
-    <router-outlet> </router-outlet>
+    <div class="container">
+      <router-outlet> </router-outlet>
+    </div>
   `,
   styleUrls: ["./ngrx.component.scss"]
 })

@@ -10,7 +10,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { Users2Component } from "./containers/users2/users2.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { ProvaDirective } from "./directive/prova.directive";
-import { PippoComponent, ProvaToken } from "./components/pippo/pippo.component";
+import { PippoComponent, ProvaToken } from "./components/pippo.component";
+import { NewNameComponent } from "./components/new-name.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PippoComponent, ProvaToken } from "./components/pippo/pippo.component";
     PurePipe,
     Users2Component,
     ProvaDirective,
-    PippoComponent
+    PippoComponent,
+    NewNameComponent
   ],
   imports: [
     CommonModule,
