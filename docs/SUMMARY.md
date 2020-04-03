@@ -35,6 +35,8 @@
 
 * [Decoratori](di/direttive.md)
 * [Tree-shakable providers](di/tree-shakable-providers.md)
+* [Providers](di/providers.md)
+* [Interceptor](di/interceptor.md)
 
 ## Style
 
