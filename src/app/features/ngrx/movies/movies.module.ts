@@ -15,8 +15,9 @@ import { FilterComponent } from "./containers/filter.component";
 import { ListComponent } from "./containers/list.component";
 import { MoviesListComponent } from "./components/movies-list.component";
 import { SharedModule } from "src/app/shared/shared.module";
-import { MovieCardComponent } from './components/movie-card/movie-card.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieCardComponent } from "./components/movie-card/movie-card.component";
+import { MovieListComponent } from "./components/movie-list/movie-list.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     FilterComponent,
     ListComponent,
     MovieCardComponent,
-    MovieListComponent
+    MovieListComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,18 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     RouterModule.forChild([
       {
         path: "",
-        component: MoviesComponent
+        component: MoviesComponent,
+        children: [
+          {
+            path: ":movieList",
+            component: ListComponent
+          },
+          {
+            path: "",
+            redirectTo: "popular",
+            pathMatch: "full"
+          }
+        ]
       }
     ]),
     StoreModule.forFeature(fromMovies.moviesFeatureKey, fromMovies.reducer),

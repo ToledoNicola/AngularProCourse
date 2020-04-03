@@ -3,15 +3,20 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-movies",
   template: `
-    <app-filter></app-filter>
-    <app-list></app-list>
+    <div>
+      <app-filter></app-filter>
+      <app-navbar></app-navbar>
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
   `,
   styles: [
     `
       :host {
         height: 100%;
         display: grid;
-        grid-template-rows: 5rem 1fr;
+        grid-template-rows: 10rem 1fr;
       }
     `
   ]

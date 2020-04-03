@@ -12,6 +12,10 @@ export const selectIsLoaded = createSelector(
   selectMoviesState,
   state => state.loaded
 );
+export const selectIsLoading = createSelector(
+  selectMoviesState,
+  state => state.loading
+);
 
 export const selectMovies = createSelector(
   selectMoviesState,
