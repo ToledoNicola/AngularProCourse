@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { Movie } from "../../models/movie";
 
 @Component({
-  selector: 'app-movie-list',
-  templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss']
+  selector: "app-movie-list",
+  template: `
+    <app-movie-card *ngFor="let movie of movies"></app-movie-card>
+  `,
+  styleUrls: ["./movie-list.component.scss"]
 })
 export class MovieListComponent implements OnInit {
+  @Input() movies: Movie[];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

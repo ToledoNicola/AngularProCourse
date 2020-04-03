@@ -14,7 +14,7 @@ import { loadMovies } from "../store/actions/movies.actions";
   selector: "app-list",
   template: `
     <ng-container *ngIf="loaded$ | async; else elseTemplate">
-      <h1>caricati</h1>
+      <app-movie-list [movies]="movies$ | async"></app-movie-list>
     </ng-container>
     <ng-template #elseTemplate>
       <h1>loading...</h1>
