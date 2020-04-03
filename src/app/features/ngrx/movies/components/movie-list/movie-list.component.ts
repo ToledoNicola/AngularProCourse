@@ -4,7 +4,10 @@ import { Movie } from "../../models/movie";
 @Component({
   selector: "app-movie-list",
   template: `
-    <app-movie-card *ngFor="let movie of movies"></app-movie-card>
+    <app-movie-card
+      *ngFor="let movie of movies"
+      [movie]="movie"
+    ></app-movie-card>
   `,
   styleUrls: ["./movie-list.component.scss"]
 })
