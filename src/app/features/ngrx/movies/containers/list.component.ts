@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
 import { Movie } from "../models/movie";
 import { map, tap } from "rxjs/operators";
 import { loadMovies } from "../store/actions/movies.actions";
+import * as fromRoot from "src/app/store";
 
 @Component({
   selector: "app-list",
@@ -19,10 +20,14 @@ import { loadMovies } from "../store/actions/movies.actions";
     <ng-template #elseTemplate>
       <h1>loading...</h1>
     </ng-template>
+    <h1 *ngIf="currentRoute$ | async"></h1>
   `,
   styles: [``]
 })
 export class ListComponent implements OnInit {
+  currentRoute$ = this.store
+    .select(fromRoot.selectRouteParams)
+    .pipe(tap(console.log));
   movies$: Observable<Movie[]> = this.store.select(selectMovies);
   loaded$: Observable<boolean> = this.store.select(selectIsLoaded).pipe(
     tap(isLoaded => {
@@ -32,7 +37,7 @@ export class ListComponent implements OnInit {
       }
     })
   );
-  constructor(private store: Store<State>) {}
+  constructor(private store: Store<any>) {}
 
   ngOnInit() {}
 }
