@@ -1,3 +1,23 @@
 :host {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: 354.5px;
+  width: 183px;
+  .image {
+    display: block;
+    img {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      width: 100%;
+      // object-fit: contain;
+    }
+  }
+  .content {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: 6px;
+  }
 }

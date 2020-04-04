@@ -4,7 +4,13 @@ import { Movie } from "../../models/movie";
 @Component({
   selector: "app-movie-card",
   template: `
-    <div>
+    <div class="image">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w400' + movie.poster_path"
+        loading="lazy"
+      />
+    </div>
+    <div class="content">
       <h2>{{ movie.title }}</h2>
     </div>
   `,

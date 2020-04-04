@@ -23,7 +23,17 @@ import * as fromRoot from "src/app/store";
     </ng-template>
     <!-- <h1 *ngIf="currentRoute$ | async"></h1> -->
   `,
-  styles: [``]
+  styles: [
+    `
+      :host {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        justify-items: center;
+        padding: 0 3rem 2rem 3rem;
+      }
+    `
+  ]
 })
 export class ListComponent implements OnInit {
   // currentRoute$ = this.store
