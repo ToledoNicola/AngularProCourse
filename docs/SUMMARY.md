@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Angular Pro il corso](README.md)
+* [Info](README.md)
 
 ## Performance
 
@@ -10,6 +10,8 @@
 * [Smart & Dump components](performance/smart-and-dump-components.md)
 * [Pure Pipe](performance/pure-pipe.md)
 * [Memoization](performance/memoization.md)
+* [Lazy Loading Components](performance/lazy-loading-components.md)
+* [Lazy Load Module](performance/lazy-load-module.md)
 
 ## Rxjs
 

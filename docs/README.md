@@ -1,6 +1,4 @@
-# Angular Pro il corso
-
-## Info
+# Info
 
 * Angular v9
 * NGRX v9
