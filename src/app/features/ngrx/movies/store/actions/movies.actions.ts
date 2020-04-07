@@ -19,3 +19,7 @@ export const loadMoviesFailure = createAction(
   "[Movies API] Load Movies Failure",
   props<{ error: any }>()
 );
+export const searchMovie = createAction(
+  "[Movies] Search Movie",
+  props<{ title: string }>()
+);

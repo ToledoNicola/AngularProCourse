@@ -18,6 +18,7 @@ import { SharedModule } from "src/app/shared/shared.module";
 import { MovieCardComponent } from "./components/movie-card/movie-card.component";
 import { MovieListComponent } from "./components/movie-list/movie-list.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,10 +29,12 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     ListComponent,
     MovieCardComponent,
     MovieListComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
+    SharedModule,
+    ReactiveFormsModule,
     HttpClientModule, // creao nuova istanza in questo injector in modo da sovascrivere quello globale ed applicare l'interceptor
     RouterModule.forChild([
       {
@@ -39,28 +42,33 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
         component: MoviesComponent,
         children: [
           {
-            path: ":movieList",
-            component: ListComponent
-          },
-          {
             path: "",
             redirectTo: "popular",
-            pathMatch: "full"
-          }
-        ]
-      }
+            pathMatch: "full",
+          },
+          {
+            path: ":movieList",
+            component: ListComponent,
+            children: [
+              {
+                path: ":movieId",
+                component: ListComponent, // dettaglio film
+              },
+            ],
+          },
+        ],
+      },
     ]),
     StoreModule.forFeature(fromMovies.moviesFeatureKey, fromMovies.reducer),
     EffectsModule.forFeature([MoviesEffects]),
-    SharedModule
   ],
   providers: [
     MoviesDataService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MoviesInterceptor,
-      multi: true // aggiungo un'altra classe allo stesso token non sovrascrivo
-    }
-  ]
+      multi: true, // aggiungo un'altra classe allo stesso token non sovrascrivo
+    },
+  ],
 })
 export class MoviesModule {}

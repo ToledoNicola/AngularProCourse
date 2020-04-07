@@ -6,15 +6,15 @@ export const selectMoviesState = createFeatureSelector<fromMovies.State>(
 );
 export const selectFileterName = createSelector(
   selectMoviesState,
-  state => state.nameFileter
+  (state) => state.titleFileter
 );
 export const selectIsLoaded = createSelector(
   selectMoviesState,
-  state => state.loaded
+  (state) => state.loaded
 );
 export const selectIsLoading = createSelector(
   selectMoviesState,
-  state => state.loading
+  (state) => state.loading
 );
 
 export const selectMovies = createSelector(
@@ -26,7 +26,7 @@ export const selectMovies = createSelector(
     }
     return fromMovies
       .selectAll(state)
-      .filter(movie =>
+      .filter((movie) =>
         movie.title.toUpperCase().includes(filterName.toUpperCase())
       );
   }

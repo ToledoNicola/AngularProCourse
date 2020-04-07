@@ -12,22 +12,23 @@ import { environment } from "src/environments/environment";
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
+        // dalla v9 per default sono tutti attivi quindi vanno disattivati
         strictStateImmutability: true, // controlla che non venga mutato lo store andandolo a cambiare direttamente
         strictActionImmutability: true,
         strictActionSerializability: true,
-        strictStateSerializability: true
-      }
+        strictStateSerializability: true,
+      },
     }),
     StoreRouterConnectingModule.forRoot({
-      stateKey: "router", // nome all'intereno dello store
-      routerState: RouterState.Minimal
+      stateKey: "router", // oprional: nome all'intereno dello store, default router
+      routerState: RouterState.Minimal, // defoult minimal
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
-      logOnly: environment.production
+      logOnly: environment.production,
     }),
     EffectsModule.forRoot([]),
-    EntityDataModule.forRoot({}) // importare anche HttpClientModule altrimenti da errore
-  ]
+    EntityDataModule.forRoot({}), // importare anche HttpClientModule altrimenti da errore
+  ],
 })
 export class NgrxModule {}

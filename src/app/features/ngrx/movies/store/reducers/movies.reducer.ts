@@ -12,7 +12,7 @@ export interface State extends EntityState<Movie> {
   loading: boolean;
   loaded: boolean;
   error: string;
-  nameFileter: string;
+  titleFileter: string;
 }
 
 export const initialState: State = adapter.getInitialState({
@@ -22,13 +22,13 @@ export const initialState: State = adapter.getInitialState({
   loading: false,
   loaded: false,
   error: null,
-  nameFileter: null
+  titleFileter: null,
 });
 
 const movieReducer = createReducer(
   initialState,
 
-  on(MoviesActions.loadMovies, state => ({ ...state, loading: true })),
+  on(MoviesActions.loadMovies, (state) => ({ ...state, loading: true })),
   on(MoviesActions.loadMoviesSuccess, (state, action) =>
     adapter.addAll(action.data.results, {
       ...state,
@@ -36,13 +36,17 @@ const movieReducer = createReducer(
       total_pages: action.data.total_pages,
       total_results: action.data.total_results,
       loading: false,
-      loaded: true
+      loaded: true,
     })
   ),
   on(MoviesActions.loadMoviesFailure, (state, action) => ({
     ...state,
     error: action.error,
-    loading: false
+    loading: false,
+  })),
+  on(MoviesActions.searchMovie, (state, action) => ({
+    ...state,
+    titleFileter: action.title,
   }))
 );
 
@@ -58,5 +62,5 @@ export const {
   selectIds,
   selectEntities,
   selectAll,
-  selectTotal
+  selectTotal,
 } = adapter.getSelectors();

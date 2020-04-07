@@ -4,7 +4,7 @@
 import {
   ActionReducerMap,
   MetaReducer,
-  createFeatureSelector
+  createFeatureSelector,
 } from "@ngrx/store";
 import { environment } from "../../environments/environment";
 import * as fromRouter from "@ngrx/router-store";
@@ -14,13 +14,16 @@ export interface AppState {
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  router: fromRouter.routerReducer
+  router: fromRouter.routerReducer, // da definire a mano per recuperare i selettori sotto
 };
 
 export const metaReducers: MetaReducer<AppState>[] = !environment.production
   ? []
   : [];
 
+/**
+ * router selectors
+ */
 export const selectRouter = createFeatureSelector<
   AppState,
   fromRouter.RouterReducerState<any>
@@ -33,5 +36,5 @@ export const {
   selectRouteParams, // select the current route params
   selectRouteParam, // factory function to select a route param
   selectRouteData, // select the current route data
-  selectUrl // select the current url
+  selectUrl, // select the current url
 } = fromRouter.getSelectors(selectRouter);
