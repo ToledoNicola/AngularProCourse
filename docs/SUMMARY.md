@@ -7,6 +7,7 @@
 * [Immutabilità](performance/immutabilita.md)
 * [Change detection](performance/change-detection/README.md)
   * [OnPush](performance/change-detection/onpush.md)
+* [Statefull & Stateless components](performance/statefull-and-stateless-components.md)
 * [Smart & Dump components](performance/smart-and-dump-components.md)
 * [Pure Pipe](performance/pure-pipe.md)
 * [Memoization](performance/memoization.md)
@@ -17,6 +18,7 @@
 
 * [Da Zero](rxjs/scratch.md)
 * [Observables](rxjs/observables.md)
+* [State management](rxjs/state-management.md)
 
 ## Akita
 
@@ -32,6 +34,7 @@
 * [Effects](redux/effects.md)
 * [Entity](redux/entity.md)
 * [Data](redux/data.md)
+* [Router-Store](redux/router-store.md)
 
 ## di
 
