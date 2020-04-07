@@ -20,6 +20,7 @@ import { MovieListComponent } from "./components/movie-list/movie-list.component
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { DetailsComponent } from './containers/details/details.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DetailsComponent } from './containers/details/details.component';
     MovieListComponent,
     NavbarComponent,
     DetailsComponent,
+    MovieDetailComponent,
   ],
   imports: [
     CommonModule,
