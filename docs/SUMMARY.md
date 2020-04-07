@@ -8,7 +8,7 @@
 * [Change detection](performance/change-detection/README.md)
   * [OnPush](performance/change-detection/onpush.md)
 * [Statefull & Stateless components](performance/statefull-and-stateless-components.md)
-* [Smart & Dump components](performance/smart-and-dump-components.md)
+* [Smart & Dump, Statefull & Stateless components](performance/smart-and-dump-components.md)
 * [Pure Pipe](performance/pure-pipe.md)
 * [Memoization](performance/memoization.md)
 * [Lazy Loading Components](performance/lazy-loading-components.md)
@@ -35,6 +35,7 @@
 * [Entity](redux/entity.md)
 * [Data](redux/data.md)
 * [Router-Store](redux/router-store.md)
+* [Tips](redux/tips.md)
 
 ## di
 
