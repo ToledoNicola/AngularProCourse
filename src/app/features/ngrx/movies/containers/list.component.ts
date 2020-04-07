@@ -4,7 +4,7 @@ import { State } from "../store/reducers/movies.reducer";
 import {
   selectMovies,
   selectIsLoaded,
-  selectIsLoading
+  selectIsLoading,
 } from "../store/selectors/movies.selectors";
 import { Observable } from "rxjs";
 import { Movie } from "../models/movie";
@@ -27,13 +27,13 @@ import * as fromRoot from "src/app/store";
     `
       :host {
         display: grid;
-        height: 100%;
+        /* height: 100%; */
         width: 100%;
         justify-items: center;
         padding: 0 3rem 2rem 3rem;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class ListComponent implements OnInit {
   // currentRoute$ = this.store

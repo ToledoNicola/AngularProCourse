@@ -1,5 +1,5 @@
 :host {
-  height: 100%;
+  height: auto;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
@@ -8,4 +8,9 @@
   gap: 30px;
   padding: 1rem 2rem;
   justify-items: center;
+  .wrapper {
+    width: 100px;
+    min-height: 190px;
+    cursor: pointer;
+  }
 }
