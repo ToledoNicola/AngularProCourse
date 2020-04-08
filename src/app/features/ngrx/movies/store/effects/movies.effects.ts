@@ -8,6 +8,7 @@ import {
   withLatestFrom,
   tap,
   filter,
+  exhaustMap,
 } from "rxjs/operators";
 import { EMPTY, of } from "rxjs";
 
@@ -41,7 +42,8 @@ export class MoviesEffects {
         this.store.select(selectNextPage)
       ),
       // tap(console.log),
-      switchMap(([_, movieList, nextPage]) =>
+      //sostituire con concatMap,exhaustMap,  per far medere la differenza se uno fa piu dispatch di questa azione
+      exhaustMap(([_, movieList, nextPage]) =>
         this.moviesData.getMovies(movieList, nextPage).pipe(
           map((data) => MoviesActions.loadMoreMoviesSuccess({ data })),
           catchError((error) => of(MoviesActions.loadMoviesFailure({ error })))
