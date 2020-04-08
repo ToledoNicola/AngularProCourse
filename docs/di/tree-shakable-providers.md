@@ -31,6 +31,6 @@ export class Service {
 ```
 
 {% hint style="warning" %}
-Todo: e possibile il provideIn: non in root??
+ Todo : e possibile il provideIn: non in root??
 {% endhint %}
 
