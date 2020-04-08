@@ -17,9 +17,9 @@ interface PopularResponse {
 export class MoviesDataService {
   constructor(private http: HttpClient) {}
 
-  getMovies(listName: string): Observable<PopularResponse> {
-    return this.http.get(`/movie/${listName}`).pipe(
-      map(res => res as PopularResponse),
+  getMovies(listName: string, page = 1): Observable<PopularResponse> {
+    return this.http.get(`/movie/${listName}?page=${page}`).pipe(
+      map((res) => res as PopularResponse),
       catchError((error: ErrorMovie) => throwError(error.status_message))
     );
   }

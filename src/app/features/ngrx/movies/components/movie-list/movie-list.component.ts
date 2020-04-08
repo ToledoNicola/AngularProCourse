@@ -5,9 +5,14 @@ import { trigger, transition, style, animate } from "@angular/animations";
 @Component({
   selector: "app-movie-list",
   template: `
-    <div class="wrapper" @fadeIn *ngFor="let movie of movies">
-      <app-movie-card [movie]="movie"></app-movie-card>
-    </div>
+    <ng-container *ngIf="movies.length == 0; else elseTemplate">
+      <h2>Nessun Film</h2>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <div class="wrapper" @fadeIn *ngFor="let movie of movies">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </div>
+    </ng-template>
   `,
   styleUrls: ["./movie-list.component.scss"],
   animations: [

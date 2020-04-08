@@ -16,6 +16,10 @@ export const selectIsLoading = createSelector(
   selectMoviesState,
   (state) => state.loading
 );
+export const selectNextPage = createSelector(
+  selectMoviesState,
+  (state) => state.nextPage
+);
 
 export const selectMovies = createSelector(
   selectMoviesState,

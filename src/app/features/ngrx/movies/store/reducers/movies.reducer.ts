@@ -7,6 +7,7 @@ export const moviesFeatureKey = "movies";
 const adapter = createEntityAdapter<Movie>();
 export interface State extends EntityState<Movie> {
   page: number;
+  nextPage: number;
   total_results: number;
   total_pages: number;
   loading: boolean;
@@ -16,7 +17,8 @@ export interface State extends EntityState<Movie> {
 }
 
 export const initialState: State = adapter.getInitialState({
-  page: null,
+  page: 0,
+  nextPage: 1,
   total_pages: null,
   total_results: null,
   loading: false,
@@ -28,15 +30,23 @@ export const initialState: State = adapter.getInitialState({
 const movieReducer = createReducer(
   initialState,
 
-  on(MoviesActions.loadMovies, (state) => ({ ...state, loading: true })),
+  on(MoviesActions.loadMovies, (state) => ({ ...state, loaded: false })),
   on(MoviesActions.loadMoviesSuccess, (state, action) =>
-    adapter.addAll(action.data.results, {
+    adapter.setAll(action.data.results, {
       ...state,
       page: action.data.page,
+      nextPage: action.data.page + 1,
       total_pages: action.data.total_pages,
       total_results: action.data.total_results,
-      loading: false,
       loaded: true,
+    })
+  ),
+  on(MoviesActions.loadMoreMoviesSuccess, (state, action) =>
+    adapter.addMany(action.data.results, {
+      ...state,
+      page: action.data.page,
+      nextPage: action.data.page + 1,
+      loading: false,
     })
   ),
   on(MoviesActions.loadMoviesFailure, (state, action) => ({
@@ -47,6 +57,10 @@ const movieReducer = createReducer(
   on(MoviesActions.searchMovie, (state, action) => ({
     ...state,
     titleFileter: action.title,
+  })),
+  on(MoviesActions.loadMoreMovies, (state, action) => ({
+    ...state,
+    loading: true,
   }))
 );
 

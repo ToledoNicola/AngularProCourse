@@ -7,7 +7,7 @@ import {
   switchMap,
   withLatestFrom,
   tap,
-  filter
+  filter,
 } from "rxjs/operators";
 import { EMPTY, of } from "rxjs";
 
@@ -16,6 +16,7 @@ import { MoviesDataService } from "../../services/movies-data.service";
 import { Store } from "@ngrx/store";
 import * as fromRoot from "src/app/store";
 import { ROUTER_NAVIGATION, RouterNavigationAction } from "@ngrx/router-store";
+import { selectNextPage } from "../selectors/movies.selectors";
 
 @Injectable()
 export class MoviesEffects {
@@ -26,8 +27,24 @@ export class MoviesEffects {
       // tap(console.log),
       switchMap(([_, movieList]) =>
         this.moviesData.getMovies(movieList).pipe(
-          map(data => MoviesActions.loadMoviesSuccess({ data })),
-          catchError(error => of(MoviesActions.loadMoviesFailure({ error })))
+          map((data) => MoviesActions.loadMoviesSuccess({ data })),
+          catchError((error) => of(MoviesActions.loadMoviesFailure({ error })))
+        )
+      )
+    );
+  });
+  loadMoreMovies$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(MoviesActions.loadMoreMovies),
+      withLatestFrom(
+        this.store.select(fromRoot.selectRouteParam("movieList")),
+        this.store.select(selectNextPage)
+      ),
+      // tap(console.log),
+      switchMap(([_, movieList, nextPage]) =>
+        this.moviesData.getMovies(movieList, nextPage).pipe(
+          map((data) => MoviesActions.loadMoreMoviesSuccess({ data })),
+          catchError((error) => of(MoviesActions.loadMoviesFailure({ error })))
         )
       )
     );
@@ -38,7 +55,7 @@ export class MoviesEffects {
       withLatestFrom(this.store.select(fromRoot.selectRouteParam("movieList"))),
       tap(console.log),
       filter(([_, movieList]) => !!movieList),
-      map(_ => MoviesActions.loadMovies())
+      map((_) => MoviesActions.loadMovies())
     );
   });
 
