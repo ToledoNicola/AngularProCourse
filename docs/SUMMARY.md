@@ -1,20 +1,23 @@
 # Table of contents
 
-* [Angular Pro il corso](README.md)
+* [Info](README.md)
 
 ## Performance
 
 * [Immutabilità](performance/immutabilita.md)
 * [Change detection](performance/change-detection/README.md)
   * [OnPush](performance/change-detection/onpush.md)
-* [Smart & Dump components](performance/smart-and-dump-components.md)
+* [Smart & Dump, Statefull & Stateless components](performance/smart-and-dump-components.md)
 * [Pure Pipe](performance/pure-pipe.md)
 * [Memoization](performance/memoization.md)
+* [Lazy Loading Components](performance/lazy-loading-components.md)
+* [Lazy Load Module](performance/lazy-load-module.md)
 
 ## Rxjs
 
 * [Da Zero](rxjs/scratch.md)
 * [Observables](rxjs/observables.md)
+* [State management](rxjs/state-management.md)
 
 ## Akita
 
@@ -30,6 +33,8 @@
 * [Effects](redux/effects.md)
 * [Entity](redux/entity.md)
 * [Data](redux/data.md)
+* [Router-Store](redux/router-store.md)
+* [Tips](redux/tips.md)
 
 ## di
 
