@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Movie } from "../../models/movie";
 import { trigger, transition, style, animate } from "@angular/animations";
 
@@ -10,7 +10,10 @@ import { trigger, transition, style, animate } from "@angular/animations";
     </ng-container>
     <ng-template #elseTemplate>
       <div class="wrapper" @fadeIn *ngFor="let movie of movies">
-        <app-movie-card [movie]="movie"></app-movie-card>
+        <app-movie-card
+          [movie]="movie"
+          (click)="selected.emit(movie.id)"
+        ></app-movie-card>
       </div>
     </ng-template>
   `,
@@ -26,6 +29,7 @@ import { trigger, transition, style, animate } from "@angular/animations";
 })
 export class MovieListComponent implements OnInit {
   @Input() movies: Movie[];
+  @Output() selected = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}

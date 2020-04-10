@@ -23,4 +23,10 @@ export class MoviesDataService {
       catchError((error: ErrorMovie) => throwError(error.status_message))
     );
   }
+  getMovie(id: string): Observable<Movie> {
+    return this.http.get(`/movie/${id}`).pipe(
+      map((res) => res as Movie),
+      catchError((error: ErrorMovie) => throwError(error.status_message))
+    );
+  }
 }

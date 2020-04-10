@@ -4,17 +4,17 @@ import {
   ChangeDetectionStrategy,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
 } from "@angular/core";
 
 @Component({
   selector: "app-calculator-keypad",
   templateUrl: "./calculator-keypad.component.html",
   styleUrls: ["./calculator-keypad.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalculatorKeypadComponent implements OnInit {
-  @Input() result: string;
+  @Input() result: number;
 
   @Output() selectedNumber = new EventEmitter();
   @Output() selectedOperator = new EventEmitter();

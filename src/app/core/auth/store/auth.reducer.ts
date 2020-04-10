@@ -4,7 +4,7 @@ import { User } from "../models/user";
 export const authFeatureKey = "auth";
 
 export interface State {
-  user: User;
+  user: User | null;
   loading: boolean;
   error: any;
 }
@@ -12,22 +12,22 @@ export interface State {
 export const initialState: State = {
   user: null,
   loading: false,
-  error: null
+  error: null,
 };
 
 const authReducer = createReducer(
   initialState,
 
-  on(AuthActions.login, state => ({ ...state, loading: true })),
+  on(AuthActions.login, (state) => ({ ...state, loading: true })),
   on(AuthActions.loginSuccess, (state, action) => ({
     ...state,
     loading: false,
-    user: action.user
+    user: action.user,
   })),
   on(AuthActions.loginFailure, (state, action) => ({
     ...state,
     error: action.error,
-    loading: false
+    loading: false,
   }))
 );
 

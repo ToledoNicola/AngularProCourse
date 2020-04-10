@@ -1,9 +1,8 @@
-import { Action, createReducer, on } from "@ngrx/store";
-import * as MoviesActions from "../actions/movies.actions";
+import { Action, createReducer, on, createSelector } from "@ngrx/store";
+import * as MoviesActions from "../actions/data.actions";
 import { EntityState, createEntityAdapter } from "@ngrx/entity";
 import { Movie } from "../../models/movie";
 
-export const moviesFeatureKey = "movies";
 const adapter = createEntityAdapter<Movie>();
 export interface State extends EntityState<Movie> {
   page: number;
@@ -13,7 +12,7 @@ export interface State extends EntityState<Movie> {
   loading: boolean;
   loaded: boolean;
   error: string;
-  titleFileter: string;
+  selectedMovieId: number;
 }
 
 export const initialState: State = adapter.getInitialState({
@@ -24,7 +23,7 @@ export const initialState: State = adapter.getInitialState({
   loading: false,
   loaded: false,
   error: null,
-  titleFileter: null,
+  selectedMovieId: null,
 });
 
 const movieReducer = createReducer(
@@ -41,6 +40,13 @@ const movieReducer = createReducer(
       loaded: true,
     })
   ),
+  on(MoviesActions.loadMovieSuccess, (state, action) =>
+    adapter.setOne(action.movie, { ...state, selectedMovieId: action.movie.id })
+  ),
+  on(MoviesActions.loadMoreMovies, (state, action) => ({
+    ...state,
+    loading: true,
+  })),
   on(MoviesActions.loadMoreMoviesSuccess, (state, action) =>
     adapter.addMany(action.data.results, {
       ...state,
@@ -54,13 +60,9 @@ const movieReducer = createReducer(
     error: action.error,
     loading: false,
   })),
-  on(MoviesActions.searchMovie, (state, action) => ({
+  on(MoviesActions.detailsMovie, (state, action) => ({
     ...state,
-    titleFileter: action.title,
-  })),
-  on(MoviesActions.loadMoreMovies, (state, action) => ({
-    ...state,
-    loading: true,
+    selectedMovieId: action.id,
   }))
 );
 

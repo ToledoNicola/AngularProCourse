@@ -1,19 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { selectMovie } from "../../store/selectors/data.selectors";
+import { getMovie } from "../../store/actions/data.actions";
 
 @Component({
-  selector: 'app-details',
+  selector: "app-details",
   template: `
-    <p>
-      details works!
-    </p>
+    <ng-container *ngIf="movie$ | async; else elseTemplate">
+      <app-movie-details [movie]="movie$ | async"> </app-movie-details>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <h1>Loading...</h1>
+    </ng-template>
   `,
-  styleUrls: ['./details.component.scss']
+  styleUrls: ["./details.component.scss"],
 })
 export class DetailsComponent implements OnInit {
+  movie$ = this.store.select(selectMovie);
 
-  constructor() { }
+  constructor(private store: Store<any>) {}
 
   ngOnInit(): void {
+    this.store.dispatch(getMovie());
   }
-
 }

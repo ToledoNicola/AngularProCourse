@@ -5,10 +5,10 @@ import { Component, OnInit } from "@angular/core";
   template: `
     <div>
       <app-filter></app-filter>
-      <app-navbar></app-navbar>
+      <!-- <app-navbar></app-navbar> -->
     </div>
     <div class="movies">
-      <router-outlet></router-outlet>
+      <app-list></app-list>
     </div>
   `,
   styles: [

@@ -7,6 +7,9 @@ ul {
   align-items: center;
   padding: 0;
   list-style: none;
+  background-color: #3f1669;
+  color: rgb(251, 251, 251);
+  box-shadow: 0 3px 0 rgba(84, 94, 111, 0.2);
   li {
     transition: ease-in 200ms; // per effetto quando viene applicata la classe active e rimossa
     font-family: "Source Sans Pro", "Pacifico";
@@ -19,5 +22,5 @@ ul {
 }
 
 .active {
-  color: rgb(138, 1, 1);
+  color: #22b373;
 }

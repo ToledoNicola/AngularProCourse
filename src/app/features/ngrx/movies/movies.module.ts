@@ -4,9 +4,9 @@ import { CommonModule } from "@angular/common";
 import { MoviesComponent } from "./movies.component";
 import { RouterModule } from "@angular/router";
 import { StoreModule } from "@ngrx/store";
-import * as fromMovies from "./store/reducers/movies.reducer";
+import * as fromMovies from "./store/reducers";
 import { EffectsModule } from "@ngrx/effects";
-import { MoviesEffects } from "./store/effects/movies.effects";
+import { DataEffects } from "./store/effects/data.effects";
 import { MoviesDataService } from "./services/movies-data.service";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { MoviesInterceptor } from "./movies.interceptor";
@@ -19,8 +19,9 @@ import { MovieCardComponent } from "./components/movie-card/movie-card.component
 import { MovieListComponent } from "./components/movie-list/movie-list.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import { DetailsComponent } from './containers/details/details.component';
-import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { DetailsComponent } from "./containers/details/details.component";
+import { SelectListComponent } from "./components/select-list/select-list.component";
+import { MovieDetailsComponent } from "./components/movie-details/movie-details.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     MovieListComponent,
     NavbarComponent,
     DetailsComponent,
-    MovieDetailComponent,
+    MovieDetailsComponent,
+    SelectListComponent,
   ],
   imports: [
     CommonModule,
@@ -44,27 +46,14 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
       {
         path: "",
         component: MoviesComponent,
-        children: [
-          {
-            path: "",
-            redirectTo: "popular",
-            pathMatch: "full",
-          },
-          {
-            path: ":movieList",
-            component: ListComponent,
-            children: [
-              {
-                path: ":movieId",
-                component: ListComponent, // dettaglio film
-              },
-            ],
-          },
-        ],
+      },
+      {
+        path: ":movieId",
+        component: DetailsComponent,
       },
     ]),
-    StoreModule.forFeature(fromMovies.moviesFeatureKey, fromMovies.reducer),
-    EffectsModule.forFeature([MoviesEffects]),
+    StoreModule.forFeature(fromMovies.moviesFeatureKey, fromMovies.reducers),
+    EffectsModule.forFeature([DataEffects]),
   ],
   providers: [
     MoviesDataService,
