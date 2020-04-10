@@ -35,10 +35,13 @@ import { Router } from "@angular/router";
     `
       :host {
         display: grid;
-        width: 80%;
-        justify-items: center;
+        width: 47%;
+        height: 442px;
+        overflow: scroll;
+        place-items: center;
         background-color: white;
         border-radius: 10px;
+        box-shadow: 0 3px 0 rgba(84, 94, 111, 0.2);
       }
       button {
         display: block;
@@ -67,6 +70,6 @@ export class ListComponent implements OnInit {
   }
   details(id) {
     this.store.dispatch(detailsMovie({ id }));
-    this.router.navigateByUrl("/dashboard/ngrx/movies/" + id);
+    // this.router.navigateByUrl("/dashboard/ngrx/movies/" + id);
   }
 }

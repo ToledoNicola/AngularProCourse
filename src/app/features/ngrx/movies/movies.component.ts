@@ -9,6 +9,7 @@ import { Component, OnInit } from "@angular/core";
     </div>
     <div class="movies">
       <app-list></app-list>
+      <app-details></app-details>
     </div>
   `,
   styles: [
@@ -20,7 +21,7 @@ import { Component, OnInit } from "@angular/core";
       }
       .movies {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         padding-bottom: 30px;
       }
     `,

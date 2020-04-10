@@ -44,26 +44,26 @@ export class DataEffects {
     );
   });
 
-  loadMovie$ = createEffect(() => {
-    return this.actions$.pipe(
-      ofType(DataActions.getMovie),
-      withLatestFrom(
-        this.store.select(DataSelectors.selectMovie),
-        (_, movie) => !!movie
-      ),
-      filter((hasMovie) => !hasMovie),
-      withLatestFrom(
-        this.store.select(fromRoot.selectRouteParam("movieId")),
-        (_, movieId) => movieId
-      ),
-      switchMap((movieId) =>
-        this.moviesData.getMovie(movieId).pipe(
-          map((movie) => DataActions.loadMovieSuccess({ movie })),
-          catchError((error) => of(DataActions.loadMovieFailure({ error })))
-        )
-      )
-    );
-  });
+  // loadMovie$ = createEffect(() => {
+  //   return this.actions$.pipe(
+  //     ofType(DataActions.getMovie),
+  //     withLatestFrom(
+  //       this.store.select(DataSelectors.selectMovie),
+  //       (_, movie) => !!movie
+  //     ),
+  //     filter((hasMovie) => !hasMovie),
+  //     withLatestFrom(
+  //       this.store.select(fromRoot.selectRouteParam("movieId")),
+  //       (_, movieId) => movieId
+  //     ),
+  //     switchMap((movieId) =>
+  //       this.moviesData.getMovie(movieId).pipe(
+  //         map((movie) => DataActions.loadMovieSuccess({ movie })),
+  //         catchError((error) => of(DataActions.loadMovieFailure({ error })))
+  //       )
+  //     )
+  //   );
+  // });
 
   loadMoreMovies$ = createEffect(() => {
     return this.actions$.pipe(

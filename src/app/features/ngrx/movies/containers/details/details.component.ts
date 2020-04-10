@@ -10,7 +10,8 @@ import { getMovie } from "../../store/actions/data.actions";
       <app-movie-details [movie]="movie$ | async"> </app-movie-details>
     </ng-container>
     <ng-template #elseTemplate>
-      <h1>Loading...</h1>
+      <!-- <h1>Loading...</h1> -->
+      <p>Seleziona un film per vedere la descrizione</p>
     </ng-template>
   `,
   styleUrls: ["./details.component.scss"],
