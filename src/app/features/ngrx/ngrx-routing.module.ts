@@ -9,35 +9,43 @@ const routes: Routes = [
     component: NgrxComponent,
     children: [
       {
+        path: "",
+        redirectTo: "counter",
+        pathMatch: "full",
+      },
+      {
         path: "calculator",
         loadChildren: () =>
-          import("./calculator/calculator.module").then(m => m.CalculatorModule)
+          import("./calculator/calculator.module").then(
+            (m) => m.CalculatorModule
+          ),
       },
       {
         path: "todo",
-        loadChildren: () => import("./todo/todo.module").then(m => m.TodoModule)
+        loadChildren: () =>
+          import("./todo/todo.module").then((m) => m.TodoModule),
       },
       {
         path: "counter",
         loadChildren: () =>
-          import("./counter/counter.module").then(m => m.CounterModule)
+          import("./counter/counter.module").then((m) => m.CounterModule),
       },
       {
         path: "movies",
         loadChildren: () =>
-          import("./movies/movies.module").then(m => m.MoviesModule)
+          import("./movies/movies.module").then((m) => m.MoviesModule),
       },
       {
-        path: "",
-        redirectTo: "counter",
-        pathMatch: "full"
-      }
-    ]
-  }
+        path: "cart",
+        loadChildren: () =>
+          import("./cart/cart.module").then((m) => m.CartModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class NgrxRoutingModule {}

@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { DetailsComponent } from "./containers/details/details.component";
 import { SelectListComponent } from "./components/select-list/select-list.component";
 import { MovieDetailsComponent } from "./components/movie-details/movie-details.component";
+import { BuyComponent } from './containers/buy/buy.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MovieDetailsComponent } from "./components/movie-details/movie-details.
     DetailsComponent,
     MovieDetailsComponent,
     SelectListComponent,
+    BuyComponent,
   ],
   imports: [
     CommonModule,

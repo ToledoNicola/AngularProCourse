@@ -10,6 +10,7 @@ import { Movie } from "../../models/movie";
     /> -->
     <h2>{{ movie.title }}</h2>
     <p>{{ movie.overview }}</p>
+    <strong> Voto: {{ movie.vote_average }}/10 </strong>
   `,
   styleUrls: ["./movie-details.component.scss"],
 })

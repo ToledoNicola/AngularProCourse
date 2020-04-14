@@ -1,3 +1,9 @@
 h2 {
   margin-bottom: 2rem;
 }
+:host {
+  height: 100%;
+  p {
+    margin-bottom: 1rem;
+  }
+}
