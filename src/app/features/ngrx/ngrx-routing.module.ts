@@ -35,11 +35,6 @@ const routes: Routes = [
         loadChildren: () =>
           import("./movies/movies.module").then((m) => m.MoviesModule),
       },
-      {
-        path: "cart",
-        loadChildren: () =>
-          import("./cart/cart.module").then((m) => m.CartModule),
-      },
     ],
   },
 ];

@@ -14,7 +14,7 @@ import { Movie } from "../../models/movie";
       <h2>{{ movie.title }}</h2>
     </div>
   `,
-  styleUrls: ["./movie-card.component.scss"]
+  styleUrls: ["./movie-card.component.scss"],
 })
 export class MovieCardComponent implements OnInit {
   @Input() movie: Movie;
