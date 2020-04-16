@@ -36,7 +36,7 @@ import { Router } from "@angular/router";
       :host {
         display: grid;
         width: 47%;
-        height: 442px;
+        height: 416px;
         overflow: scroll;
         place-items: center;
         background-color: white;

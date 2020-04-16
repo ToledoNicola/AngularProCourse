@@ -1,0 +1,22 @@
+.active {
+  background-color: gold;
+}
+.lista {
+  display: grid;
+  place-items: center;
+  height: 200px;
+  font-size: 3rem;
+  ul {
+    padding: none;
+  }
+}
+.filters {
+  display: flex;
+  justify-content: center;
+  &__color {
+    margin-left: 1rem;
+  }
+  button {
+    outline: none;
+  }
+}

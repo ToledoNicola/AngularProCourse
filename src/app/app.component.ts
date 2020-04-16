@@ -5,9 +5,7 @@ import { isLogged } from "./core/auth/store/auth.selectors";
 
 @Component({
   selector: "app-root",
-  template: `
-    <router-outlet> </router-outlet>
-  `,
-  styles: []
+  template: ` <router-outlet> </router-outlet> `,
+  styles: [],
 })
 export class AppComponent {}

@@ -14,6 +14,7 @@ import { NgrxFakeModule } from "./features/redux/ngrx-fake/ngrx-fake.module";
 import { reducersFake } from "./store-fake";
 import { NgrxModule } from "./store/ngrx.module";
 import { AuthModule } from "./core/auth/auth.module";
+import { CoreModule } from "./core/core.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,9 +28,9 @@ import { AuthModule } from "./core/auth/auth.module";
     NgrxModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    AuthModule
+    AuthModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
