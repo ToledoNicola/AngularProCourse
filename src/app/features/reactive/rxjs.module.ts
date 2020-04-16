@@ -6,11 +6,17 @@ import { RxjsRoutingModule } from "./rxjs-routing.module";
 import { RxjsComponent } from "./rxjs.component";
 import { SearchComponent } from "./containers/search/search.component";
 import { SharedModule } from "src/app/shared/shared.module";
-import { DynamicQueryingComponent } from "./containers/dynamic-querying/dynamic-querying.component";
 import { DataService } from "./services/data.service";
+import { PlaygroundComponent } from "./playground/playground.component";
+import { DynamicQueryingComponent } from "./dynamic-querying/dynamic-querying.component";
 
 @NgModule({
-  declarations: [RxjsComponent, SearchComponent, DynamicQueryingComponent],
+  declarations: [
+    RxjsComponent,
+    SearchComponent,
+    DynamicQueryingComponent,
+    PlaygroundComponent,
+  ],
   imports: [
     CommonModule,
     RxjsRoutingModule,

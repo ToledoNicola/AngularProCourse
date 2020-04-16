@@ -3,6 +3,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 @Component({
   selector: "app-navigation",
   template: `
+    <div class="img-wrapper">
+      <img src="assets/logo.png" />
+    </div>
     <ul>
       <li routerLink="performance" routerLinkActive="active">Performance</li>
       <li routerLink="rxjs" routerLinkActive="active">Rxjs</li>
@@ -11,7 +14,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
     </ul>
   `,
   styleUrls: ["./navigation.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationComponent implements OnInit {
   constructor() {}

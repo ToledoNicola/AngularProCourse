@@ -24,3 +24,13 @@ ul {
 .active {
   color: #22b373;
 }
+
+.img-wrapper {
+  position: absolute;
+  height: 32px;
+  top: 9px;
+  left: 16px;
+  img {
+    height: 100%;
+  }
+}

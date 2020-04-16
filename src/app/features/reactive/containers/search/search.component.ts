@@ -1,14 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable, of } from "../../rxjs-fake";
-import { map } from "../../rxjs-fake/operators";
+import { Observable, of } from "../../lib/rxjs-fake";
+import { map } from "../../lib/rxjs-fake/operators";
 import { FormControl } from "@angular/forms";
 
 @Component({
   selector: "app-search",
-  template: `
-    <app-input [formControl]="testo"></app-input>
-  `,
-  styleUrls: ["./search.component.scss"]
+  template: ` <app-input [formControl]="testo"></app-input> `,
+  styleUrls: ["./search.component.scss"],
 })
 export class SearchComponent implements OnInit {
   testo = new FormControl("");

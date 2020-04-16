@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import "firebase/firestore";
+import { tap } from "rxjs/operators";
 
 export interface Item {
   text: string;
@@ -30,6 +31,7 @@ export class DataService {
         }
         return query;
       })
-      .valueChanges();
+      .valueChanges({ idField: "id" })
+      .pipe(tap(console.table));
   }
 }
