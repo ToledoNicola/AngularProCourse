@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-todo",
   template: `
-    <div>
+    <div class="wrapper">
       <app-tot-todos></app-tot-todos>
       <!-- con Data -->
       <app-todos> </app-todos>
@@ -19,12 +19,13 @@ import { Component, OnInit } from "@angular/core";
         width: 100%;
         display: grid;
         place-items: center;
-        app-todos {
-          margin-top: 2rem;
-        }
       }
-    `
-  ]
+      .wrapper {
+        display: grid;
+        gap: 2rem;
+      }
+    `,
+  ],
 })
 export class TodoComponent implements OnInit {
   constructor() {}
