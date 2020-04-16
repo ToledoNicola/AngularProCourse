@@ -9,6 +9,10 @@ import { SharedModule } from "src/app/shared/shared.module";
 import { DataService } from "./services/data.service";
 import { PlaygroundComponent } from "./playground/playground.component";
 import { DynamicQueryingComponent } from "./dynamic-querying/dynamic-querying.component";
+import { ChefsComponent } from './chefs/chefs.component';
+import { SubjectStoreComponent } from './subject-store/subject-store.component';
+import { ScanStoreComponent } from './scan-store/scan-store.component';
+import { BmiComponent } from './bmi/bmi.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,10 @@ import { DynamicQueryingComponent } from "./dynamic-querying/dynamic-querying.co
     SearchComponent,
     DynamicQueryingComponent,
     PlaygroundComponent,
+    ChefsComponent,
+    SubjectStoreComponent,
+    ScanStoreComponent,
+    BmiComponent,
   ],
   imports: [
     CommonModule,
