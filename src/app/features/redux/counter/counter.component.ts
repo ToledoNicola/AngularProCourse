@@ -5,18 +5,20 @@ import { AppState } from "src/app/store-fake";
 @Component({
   selector: "app-counter",
   template: `
-    <h1>
-      {{ number }}
-    </h1>
-    <div class="buttons">
-      <button (click)="decrement()"><h2>-</h2></button>
-      <button (click)="increment()"><h2>+</h2></button>
-    </div>
-    <div class="buttons">
-      <button (click)="reset()"><h2>reset</h2></button>
+    <div class="counter">
+      <h1>
+        {{ number }}
+      </h1>
+      <div class="buttons">
+        <button (click)="decrement()"><h2>-</h2></button>
+        <button (click)="increment()"><h2>+</h2></button>
+      </div>
+      <div class="buttons">
+        <button (click)="reset()"><h2>reset</h2></button>
+      </div>
     </div>
   `,
-  styleUrls: ["./counter.component.scss"]
+  styleUrls: ["./counter.component.scss"],
 })
 export class CounterComponent implements OnInit {
   number;
@@ -25,7 +27,7 @@ export class CounterComponent implements OnInit {
   constructor(public storeFake: StoreService<AppState>) {}
 
   ngOnInit() {
-    this.unsubscribe = this.storeFake.subscribe(state => {
+    this.unsubscribe = this.storeFake.subscribe((state) => {
       this.number = state.counter.number;
     });
   }
