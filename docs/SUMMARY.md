@@ -18,6 +18,7 @@
 * [Da Zero](rxjs/scratch.md)
 * [Observables](rxjs/observables.md)
 * [State management](rxjs/state-management.md)
+* [Scheduler](rxjs/scheduler.md)
 
 ## Akita
 
