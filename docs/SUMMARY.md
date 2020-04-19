@@ -15,10 +15,13 @@
 
 ## Rxjs
 
+* [Reactive Programming](rxjs/reactive-programming.md)
 * [Da Zero](rxjs/scratch.md)
 * [Observables](rxjs/observables.md)
-* [State management](rxjs/state-management.md)
+* [Subject](rxjs/subject.md)
 * [Scheduler](rxjs/scheduler.md)
+* [State management](rxjs/state-management.md)
+* [Summary](rxjs/summary.md)
 
 ## Akita
 
