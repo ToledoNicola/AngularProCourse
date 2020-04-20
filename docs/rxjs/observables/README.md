@@ -1,4 +1,4 @@
-# Observables
+# Observables🚰
 
 l' **observable o stream** è nella pratica _solo una funzione_ \( la **subscription function** \) che lega l' **observer** ad un **producer**
 
@@ -124,9 +124,13 @@ source$.subscribe(response => console.log(response));
 * We make 1 call to the fetch api and hence 1 http request per observer, when that observer subscribes \(lazy execution\).
 * Values emitted by the observable are not shared between observers \(ie. ogni observer riceve una diversa`response` object\). An Observable which behaves in this way is known as **unicast**.
 
+{% hint style="info" %}
+è possibile trasformare un observable **cold** in **hot** utilizzando un [subject](../subject.md) che si comporta come man-in-the-middle oppure un [multicasting operator ](../operators/#multicasting-operators)
+{% endhint %}
+
 ### Hot Observable <a id="hot-observable"></a>
 
-A hot observable has a subscription function which closes over its producer.
+A hot observable has a subscription function which closes over its producer. e se il 
 
 To understand how this is different to the cold observable, lets look at an example of a hot observable which wraps a Promise returned from the fetch api:
 
@@ -156,8 +160,31 @@ source$.subscribe(response => console.log(response));
 * Values emitted by the observable are shared between observers \(ie. each observer receives the same `response` object\). An observable which behaves this way is known as **multicast**.
 
 {% hint style="info" %}
-Gli **hot** observable  di solito sono **multicast**, ma in casi rari potrebbero ascoltare un producer che supporta solo una sottoscrizione alla volta, in quel caso sarebbe **unicast** perche ogni observer riceverebba valori diversi
+Gli **hot** observable  di solito sono **multicast**, ma in casi rari potrebbero ascoltare un producer che supporta solo una sottoscrizione alla volta, in quel caso sarebbe **unicast** perche ogni observer riceverebba valori diversi, ma è sempre possibile trasformarlo in multicast utilizzando un [operatore mulricast](../operators/#multicasting-operators) 
 {% endhint %}
+
+#### Trasformare Hot in Cold
+
+nell'esempio creiamo una factory di ob quindi ogni observer ricevera il proprio flusso di dati
+
+```typescript
+// fromEvent genera un ob hot perche il producer è esterno in questo caso il click
+const obsFactory = () => fromEvent(document, 'click').pipe(
+  .map(event => ({ clientX: event.clientX, clientY: event.clientY }))
+  );
+
+
+const sub1 = obsFactory().subscribe(val => {
+  console.log('Sub1:', val);
+});
+
+setTimeout(() => {
+  console.log('Start sub2');
+  const sub2 = obsFactory().subscribe(val => {
+    console.log('Sub2:', val);
+  });
+}, 4000);
+```
 
 ### Warm Observable
 
