@@ -21,7 +21,7 @@ The producer can either be the subscription function itself, or some source cont
 
 ### Cold Observable <a id="cold-observable"></a>
 
-A **cold observable** has a subscription function which creates a producer each time it executes.
+A **cold observable \(default\)** has a subscription function which creates a producer each time it executes.
 
 To understand what this looks like in practice, lets look at an example of a cold observable which wraps a Promise returned from the fetch api:
 
