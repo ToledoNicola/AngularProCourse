@@ -1,6 +1,6 @@
 # Observables
 
-l' **observable o stream** è nella pratica _solo una funzione_ \( la **funzione di sottoscrizione** \) che lega l' **observer** ad un **producer**
+l' **observable o stream** è nella pratica _solo una funzione_ \( la **subscription function** \) che lega l' **observer** ad un **producer**
 
 {% hint style="info" %}
 **producer:** è tutto ciò che stai usando per ottenere valori e passarli a `observer.next(value)`, chiamata http, ciclo su un array etc.
@@ -8,7 +8,7 @@ l' **observable o stream** è nella pratica _solo una funzione_ \( la **funzione
 
 il producer all'interno dell'observable emette dei valori che l'observer recupera
 
-ogni volta che l'observer si sottoscrive all'observable riesegue la **funzione di sottoscrizione**  \(in pratica l'observable\)
+ogni volta che un observer si sottoscrive all'observable riesegue la **subscription function**  \(in pratica l'observable\)
 
 The observable can essentially do three things in terms of notifying its observers.
 
@@ -79,7 +79,20 @@ source$.subscribe(observer);
 
 ## Hot and Cold Observables <a id="hot-and-cold-observables"></a>
 
-If you’re closing over a shared reference to a producer in your observable, it’s “**hot**”, if you’re creating a new producer in your observable, it’s “**cold**”. If you’re doing both is **warm**
+la differenza sta nel momento in cui inizia a produrre i valori
+
+* **Hot** quando inizia ad emettere i dati a prescindere del subscribe
+* **Cold** quando inizia ad emettere i dati al momento dell subscribe
+
+e nello specifico questi comportamenti sono possibili in base a dove viene creato  il **producer** \(data source\) 
+
+se il **producer** viene creato all'interno dell'observable \(subscription function\) è **cold**
+
+se l'observable utilizza la **reference** di un **producer** creato fuori dalla subscription function allora è **hot**
+
+se vengono fatti entrambi è **warm**
+
+### **Producer**
 
 A **producer** as a source of values for an observable - ie. the thing which actually calls the observer’s `next`, `complete` and `error` methods.
 
@@ -90,10 +103,6 @@ The producer can either be the subscription function itself, or some source cont
 A **cold observable** has a subscription function which creates a producer each time it executes.
 
 To understand what this looks like in practice, lets look at an example of a cold observable which wraps a Promise returned from the fetch api:
-
-{% hint style="warning" %}
-TODO : SOSTITUIRE CON MAT.RANDOM\(\)
-{% endhint %}
 
 ```typescript
 const subscriptionFn = observer => {
@@ -147,10 +156,10 @@ source$.subscribe(response => console.log(response));
 * Values emitted by the observable are shared between observers \(ie. each observer receives the same `response` object\). An observable which behaves this way is known as **multicast**.
 
 {% hint style="info" %}
-Gli hot observable  di solito sono **multicast**, ma potrebbero ascoltare un producer che supporta solo un ascoltatore alla volta, in quel caso sarebbe **unicast**
+Gli hot observable  di solito sono **multicast**, ma in casi rari potrebbero ascoltare un producer che supporta solo una sottoscrizione alla volta, in quel caso sarebbe **unicast** perche ogni observer riceverebba valori diversi
 {% endhint %}
 
 ### Warm Observable
 
-Observable, being that it’s _just a function_, could actually be both “hot” and “cold”. Perhaps it observes two producers? One it creates and one it closes over? That’s probably bad juju, but there are rare cases where it might be necessary
+siccome l' observer è solo una funzione potrebbe essere sia hot che cold ad esempio se ascolta due producer uno è creato all'interno della funzione ed utilizza uno creato fuori, in quel caso sarebbe '**warm**'
 
