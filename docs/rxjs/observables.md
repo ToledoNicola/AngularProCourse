@@ -156,10 +156,10 @@ source$.subscribe(response => console.log(response));
 * Values emitted by the observable are shared between observers \(ie. each observer receives the same `response` object\). An observable which behaves this way is known as **multicast**.
 
 {% hint style="info" %}
-Gli hot observable  di solito sono **multicast**, ma in casi rari potrebbero ascoltare un producer che supporta solo una sottoscrizione alla volta, in quel caso sarebbe **unicast** perche ogni observer riceverebba valori diversi
+Gli **hot** observable  di solito sono **multicast**, ma in casi rari potrebbero ascoltare un producer che supporta solo una sottoscrizione alla volta, in quel caso sarebbe **unicast** perche ogni observer riceverebba valori diversi
 {% endhint %}
 
 ### Warm Observable
 
-siccome l' observer è solo una funzione potrebbe essere sia hot che cold ad esempio se ascolta due producer uno è creato all'interno della funzione ed utilizza uno creato fuori, in quel caso sarebbe '**warm**'
+where data starts being emitted only after the 1st subscription, but where the data is still shared between multiple observables. '**warm**'
 
