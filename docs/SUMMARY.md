@@ -15,9 +15,20 @@
 
 ## Rxjs
 
+* [Reactive Programming](rxjs/reactive-programming.md)
 * [Da Zero](rxjs/scratch.md)
-* [Observables](rxjs/observables.md)
+* [Observables🚰](rxjs/observables/README.md)
+  * [Anatomia](rxjs/observables/anatomia.md)
+  * [Hot, Cold e Warm](rxjs/observables/hot-cold-e-warm.md)
+* [Operators⛓](rxjs/operators/README.md)
+  * [Creazione](rxjs/operators/creazione.md)
+  * [Flattering](rxjs/operators/flattering.md)
+  * [Multicasting](rxjs/operators/multicasting.md)
+* [Subscription📝](rxjs/subscription.md)
+* [Subject🧞‍♂️](rxjs/subject.md)
+* [Scheduler](rxjs/scheduler.md)
 * [State management](rxjs/state-management.md)
+* [Summary](rxjs/summary.md)
 
 ## Akita
 
