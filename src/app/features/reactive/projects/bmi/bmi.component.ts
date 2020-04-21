@@ -17,11 +17,11 @@ export class BmiComponent implements OnInit {
   ngOnInit(): void {
     const height$ = fromEvent(document.querySelector("#height"), "input").pipe(
       pluck("target", "value"),
-      map((v) => v / 100)
+      map((v: any) => v / 100)
     );
 
     const weight$ = fromEvent(document.querySelector("#weight"), "input").pipe(
-      map((el) => el?.target?.value),
+      // map((el) => el?.target?.value),
       // or
       pluck("target", "value")
     );

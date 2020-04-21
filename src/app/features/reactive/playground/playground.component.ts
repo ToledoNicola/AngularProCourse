@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
-import { Observable } from "rxjs";
+import { observer } from "../conole";
+import * as fromObservable from "./observable";
+import * as fromSubject from "./subject";
+import * as fromPipe from "./operators";
 
 @Component({
   selector: "app-playground",
@@ -12,17 +15,26 @@ export class PlaygroundComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.clear();
+
+    this.observable();
+    // this.input()
+    // this.subject();
+  }
+
+  input() {
+    this.testo.valueChanges
+      .pipe(fromPipe.pipe_esempioInput1())
+      .subscribe(observer);
+  }
   /**
    * differenza tra pull & push
    */
   observable() {
-    const observable = new Observable((subscriber) => {
-      subscriber.next(1);
-      subscriber.next(2);
-      subscriber.next(3);
-      subscriber.complete();
-    });
+    const observable = fromObservable.cold_Observable();
+    observable.subscribe(observer("A"));
+    observable.subscribe(observer("B"));
   }
   Creation_Operators() {}
 
@@ -42,5 +54,10 @@ export class PlaygroundComponent implements OnInit {
 
   Error_Handling_Operators() {}
 
-  subject() {}
+  subject() {
+    const subject = fromSubject.hot_Observable();
+    subject.subscribe(observer("A"));
+    subject.next(10);
+    subject.subscribe(observer("B"));
+  }
 }

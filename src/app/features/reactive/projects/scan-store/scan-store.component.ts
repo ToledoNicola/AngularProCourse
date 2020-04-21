@@ -1,5 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { fromEvent, merge, Subject, ConnectableObservable } from "rxjs";
+import {
+  fromEvent,
+  merge,
+  Subject,
+  ConnectableObservable,
+  Observable,
+} from "rxjs";
 import { publish, scan, mapTo } from "rxjs/operators";
 
 @Component({
@@ -21,10 +27,10 @@ export class ScanStoreComponent implements OnInit {
     const actions$ = new Subject();
 
     const createStore = (reducer, initialState) => {
-      const store$: ConnectableObservable<any> = actions$.pipe(
+      const store$ = actions$.pipe(
         scan(reducer, initialState),
         publish() // transformo in multicasting
-      );
+      ) as ConnectableObservable<any>;
 
       store$.connect();
 

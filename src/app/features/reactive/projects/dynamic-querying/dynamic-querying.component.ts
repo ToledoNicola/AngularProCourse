@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService, Item } from "../services/data.service";
+import { DataService, Item } from "../../services/data.service";
 import { BehaviorSubject, Observable, combineLatest } from "rxjs";
 import { switchMap } from "rxjs/operators";
 
