@@ -10,7 +10,7 @@ converting a higher-order Observable into an ordinary Observable.
 
 ### Concorrenza
 
-se un' inner ob sta emettendo dei valori ed il source ob emette un valore cosa succede?
+se un' inner ob sta emettendo dei valori e l' outer ob emette un valore cosa succede?
 
 | operator | comportamento |
 | :--- | :--- |
