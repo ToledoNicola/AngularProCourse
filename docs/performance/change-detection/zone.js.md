@@ -39,7 +39,11 @@ in questo caso il `setInterval()`  non  attivera la CD quindi `time` rimane ugua
 
 ## Zone-less
 
-Zone.js attiva la CD su tutta l'applicazione e riesegue i componenti che sono markDirty?
+Zone.js attiva la CD su tutta l'applicazione e riesegue i componenti che sono _Dirty_
+
+{% hint style="info" %}
+#### markForCheck\(\)  non attiva la CD, marca il componente come 'dirty' e nel presente o prossimo ciclo di CD lo include
+{% endhint %}
 
 possiamo attivare la CD su tutta l'applicazione manualmente cosi:
 
@@ -61,7 +65,7 @@ someMethod() {
 }
 ```
 
-in questo modo non utilizziamo piu Zone.js \(ZONE-LESS\) ed eseguiamo manualmente CD sui componenti che vogliamo
+in questo modo possiamo non utilizzare piu Zone.js \(**ZONE-LESS**\) ed eseguiamo manualmente CD sui componenti che vogliamo
 
 **ngrx offre questa possibilita con ngrx/components**
 
