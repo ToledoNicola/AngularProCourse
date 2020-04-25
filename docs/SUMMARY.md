@@ -7,6 +7,7 @@
 * [Immutabilità](performance/immutabilita.md)
 * [Change detection](performance/change-detection/README.md)
   * [OnPush](performance/change-detection/onpush.md)
+  * [Zone.js](performance/change-detection/zone.js.md)
 * [Smart & Dump, Statefull & Stateless components](performance/smart-and-dump-components.md)
 * [Pure Pipe](performance/pure-pipe.md)
 * [Memoization](performance/memoization.md)
