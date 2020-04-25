@@ -9,7 +9,7 @@ include il componente nella change detection se:
 la pipe `async` tiene traccia internamente della subscribe e per ogni nuovo valore esegue`markForCheck`
 
 {% hint style="info" %}
-#### la CD viene eseguita da Zone.js che intercetta l'evento asincrono e  markForCheck\(\)  non attiva la CD, marca il componente come 'dirty' e nel presente o prossimo ciclo di CD viene incluso
+#### la CD viene eseguita da Zone.js che intercetta l'evento asincrono e  markForCheck\(\)  non attiva la CD, marca il componente come 'dirty' e nel presente o prossimo ciclo di CD viene eseguito il rendering
 {% endhint %}
 
 
