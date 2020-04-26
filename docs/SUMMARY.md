@@ -34,13 +34,19 @@
 * [State management](rxjs/state-management.md)
 * [Summary](rxjs/summary.md)
 
+## Redux <a id="redux-1"></a>
+
+* [Il problema](redux-1/il-problema.md)
+* [Concetti principali](redux-1/concetti-principali.md)
+* [i Tre principi](redux-1/i-tre-principi.md)
+* [Da Zero](redux-1/da-zero/README.md)
+  * [Untitled](redux-1/da-zero/untitled/README.md)
+    * [Store](redux-1/da-zero/untitled/store.md)
+
 ## Akita
 
 ## NGRX <a id="redux"></a>
 
-* [Da Zero](redux/da-zero/README.md)
-  * [Untitled](redux/da-zero/untitled/README.md)
-    * [Store](redux/da-zero/untitled/store.md)
 * [Store](redux/store/README.md)
   * [Actions](redux/store/actions.md)
   * [Reducers](redux/store/reducers.md)

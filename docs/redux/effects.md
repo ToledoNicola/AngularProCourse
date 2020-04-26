@@ -1,2 +1,6 @@
 # Effects
 
+## Decoratore @Effect\(\)
+
+## createEffect\(\)
+
