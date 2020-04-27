@@ -21,15 +21,15 @@
 
 * [Reactive Programming](rxjs/reactive-programming.md)
 * [Da Zero](rxjs/scratch.md)
-* [Observables🚰](rxjs/observables/README.md)
+* [🚰Observables](rxjs/observables/README.md)
   * [Anatomia](rxjs/observables/anatomia.md)
   * [Hot, Cold e Warm](rxjs/observables/hot-cold-e-warm.md)
-* [Operators⛓](rxjs/operators/README.md)
+* [⛓Operators](rxjs/operators/README.md)
   * [Creazione](rxjs/operators/creazione.md)
   * [Flattering](rxjs/operators/flattering.md)
   * [Multicasting](rxjs/operators/multicasting.md)
-* [Subscription📝](rxjs/subscription.md)
-* [Subject🧞‍♂️](rxjs/subject.md)
+* [📝Subscription](rxjs/subscription.md)
+* [🗣Subject](rxjs/subject.md)
 * [Scheduler](rxjs/scheduler.md)
 * [State management](rxjs/state-management.md)
 * [Summary](rxjs/summary.md)
@@ -39,6 +39,7 @@
 * [Il problema](redux-1/il-problema.md)
 * [Concetti principali](redux-1/concetti-principali.md)
 * [i Tre principi](redux-1/i-tre-principi.md)
+* [Async Actions](redux-1/async-actions.md)
 * [Da Zero](redux-1/da-zero/README.md)
   * [Untitled](redux-1/da-zero/untitled/README.md)
     * [Store](redux-1/da-zero/untitled/store.md)
@@ -47,6 +48,7 @@
 
 ## NGRX <a id="redux"></a>
 
+* [Overview](redux/overview.md)
 * [Store](redux/store/README.md)
   * [Actions](redux/store/actions.md)
   * [Reducers](redux/store/reducers.md)

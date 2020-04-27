@@ -2,5 +2,9 @@
 
 ![](../../.gitbook/assets/state-management-lifecycle.png)
 
-Si basa su redux, ed utlizza rxjs
+RxJS powered state management for Angular apps, inspired by Redux.
+
+```text
+ng add @ngrx/store
+```
 
