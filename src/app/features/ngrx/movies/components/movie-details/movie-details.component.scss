@@ -1,9 +1,16 @@
 h2 {
   margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
 }
 :host {
   height: 100%;
   p {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  strong {
+    font-size: 2rem;
   }
 }
