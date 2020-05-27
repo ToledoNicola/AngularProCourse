@@ -10,7 +10,7 @@ this.testo.setValue(value, { emitEvent: false });
 
 in questo modo non scatena l'evento nel valueChange ed il timetravel sul redux dev tools funziona
 
-### Don't load if we've already loaded.
+## Don't load if we've already loaded.
 
 ```typescript
 @Effect()
@@ -28,7 +28,7 @@ loadOrdersRequested$ = this.actions$.pipe(
 
 preferisco eseguire il controllo nell'Effect per farlo una volta invece che nel container
 
-### Fetch dati
+## Fetch dati
 
 [https://dev.to/jonrimmer/where-to-initiate-data-load-in-ngrx-358l](https://dev.to/jonrimmer/where-to-initiate-data-load-in-ngrx-358l)
 
@@ -63,4 +63,13 @@ class OrdersEffects implements OnInitEffects {
   }
 }
 ```
+
+## Architettura cartelle
+
+le piu comuni sono 2
+
+* a livello di root creare cartelle che conterra lo stato di tutta l'app, feature module etc.
+* ogni feature module avra la sua cartella store che contiene i suoi file caricati in modo lazy
+
+personalmente preferisco avere tutto nei moduli feature lazy o no per avere tutto piu organizzato
 

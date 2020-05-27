@@ -1,4 +1,4 @@
-# Observables🚰
+# 🚰Observables
 
 l' **observable o stream** è nella pratica _solo una funzione_ \( la **subscription function** \) che lega l' **observer** ad un **producer**
 

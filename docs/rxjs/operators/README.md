@@ -1,4 +1,4 @@
-# Operators⛓
+# ⛓Operators
 
 esistono due tipi principali di operatori:
 
