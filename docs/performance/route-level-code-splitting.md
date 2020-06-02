@@ -1,4 +1,10 @@
-# Lazy Load Module
+# Route-Level  Code Splitting
+
+## 
+
+![prima](https://lh3.googleusercontent.com/QxbjL_3OtjfSCexJ1SUoGnrtA4lzXiDySrAMPEzf3ZlWNGGFq6pzEH4f-mfoLf_aMbQcD2v51uZZKa5BYbA7sxYs-iyIUnhT9lZe7F6STRsvZFEeT7rNu3vqr3ntxLEVmKbY4EjJ0QM)
+
+![dopo](https://lh4.googleusercontent.com/WnLL4cmMYgj176NHmjT09gCVte1iSOTAtwtqcSEiDIik1WNgnS7TBwH8uj3BKIFPLATG0_6YNoyeDb-n6-mRm3rwv_DTAXEqcNm8HPgTA6eJTnQFgpTnZtzVRzLhRyf2A4xQftTbSnw)
 
 ## Preloading Strategy
 

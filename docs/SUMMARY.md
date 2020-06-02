@@ -12,7 +12,7 @@
 * [Pure Pipe](performance/pure-pipe.md)
 * [Memoization](performance/memoization.md)
 * [Lazy Loading Components](performance/lazy-loading-components.md)
-* [Lazy Load Module](performance/lazy-load-module.md)
+* [Route-Level  Code Splitting](performance/route-level-code-splitting.md)
 * [Rx-angular](performance/rx-angular/README.md)
   * [Rx-state](performance/rx-angular/rx-state.md)
   * [Rx-template](performance/rx-angular/rx-template.md)
