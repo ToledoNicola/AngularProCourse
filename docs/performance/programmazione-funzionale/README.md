@@ -2,7 +2,11 @@
 
 ### perche?
 
-semplifica il ragionamento e il debug dei programmi
+la programmazione funzionale mira a scrivere un codice più chiaro da comprendere e più resistente agli errori
+
+ci impone di scrivere funzioni pure e deterministiche che hanno meno probabilità di essere difettose.
+
+
 
 La sostituzione di loop procedurali con funzioni può aumentare la leggibilità del programma e renderlo più elegante
 
@@ -27,4 +31,12 @@ La sostituzione di loop procedurali con funzioni può aumentare la leggibilità 
   * **sort**
   * **splice**
   * **unshift**
+
+{% embed url="https://opensource.com/article/17/6/functional-javascript" %}
+
+{% embed url="https://flaviocopes.com/javascript-functional-programming/" %}
+
+
+
+
 
