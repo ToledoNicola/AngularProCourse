@@ -4,7 +4,11 @@
 
 ## Performance
 
-* [Immutabilità](performance/immutabilita.md)
+* [Programmazione Funzionale](performance/programmazione-funzionale/README.md)
+  * [Immutabilità](performance/programmazione-funzionale/immutabilita.md)
+  * [Funzioni Pure](performance/programmazione-funzionale/funzioni-pure.md)
+  * [Composizione delle funzioni](performance/programmazione-funzionale/composizione-delle-funzioni.md)
+  * [Ricorsione](performance/programmazione-funzionale/ricorsione.md)
 * [Change detection](performance/change-detection/README.md)
   * [OnPush](performance/change-detection/onpush.md)
   * [Zone.js](performance/change-detection/zone.js.md)
