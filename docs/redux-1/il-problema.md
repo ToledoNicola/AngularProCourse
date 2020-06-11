@@ -4,7 +4,7 @@
 
 lo **stato è ovunque nelle applicazioni web** 
 
- man mano che le applicazioni crescono diventa difficile gestirlo, andando incontro allo spaghetti code, perchè ogni componente gestiche il suo stato
+man mano che le applicazioni crescono diventa difficile gestirlo, andando incontro allo spaghetti code, perché ogni componente gestisce il suo stato
 
 ![](https://css-tricks.com/wp-content/uploads/2016/03/redux-article-3-01.svg)
 
@@ -20,7 +20,7 @@ Qui è dove Redux entra in gioco. Redux offre una soluzione per archiviare tutto
 
 ![](https://css-tricks.com/wp-content/uploads/2016/03/redux-article-3-02.svg)
 
-Il negozio può essere pensato come un "intermediario" per tutti i cambiamenti di stato nell'applicazione. Con Redux coinvolto, i componenti non comunicano direttamente tra loro, ma piuttosto tutti i cambiamenti di stato devono passare attraverso la _singola fonte di verità_ , il negozio.
+Io store può essere pensato come un "intermediario" per tutti i cambiamenti di stato nell'applicazione. Con Redux coinvolto, i componenti non comunicano direttamente tra loro, ma piuttosto tutti i cambiamenti di stato devono passare attraverso la _singola fonte di verità_ , lo store.
 
 ![](https://css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg)
 
