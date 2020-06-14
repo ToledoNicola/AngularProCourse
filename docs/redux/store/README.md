@@ -1,5 +1,7 @@
 # Store
 
+é inspirato a redux ed utilizza rxjs per gestire lo store
+
 RxJS powered state management for Angular apps, inspired by Redux.
 
 * [Actions](https://ngrx.io/guide/store/actions) describe unique events that are dispatched from components and services.
@@ -8,10 +10,10 @@ RxJS powered state management for Angular apps, inspired by Redux.
 * State is accessed with the [`Store`](https://ngrx.io/api/store/Store), an observable of state and an observer of actions.
 
 ```text
-ng add @ngrx/store
+1ng add @ngrx/store
 ```
 
-## Come Funziona?
+## Come Funziona? \( fatto il grafico nelle slide \)
 
 1. Lo **stato** della tua applicazione viene mantenuto in **memoria** . Il **negozio** è immutabile.
 2. I **componenti** dell'applicazione possono iscriversi allo **store** e ottenere aggiornamenti automatici dello **stato** tramite i **selettori** .
