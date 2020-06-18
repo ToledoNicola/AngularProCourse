@@ -9,6 +9,7 @@
   * [Funzioni Pure](performance/programmazione-funzionale/funzioni-pure.md)
   * [Composizione delle funzioni](performance/programmazione-funzionale/composizione-delle-funzioni.md)
   * [Ricorsione](performance/programmazione-funzionale/ricorsione.md)
+  * [programmazione ad Oggetti VS Fuzionale](performance/programmazione-funzionale/programmazione-ad-oggetti-vs-fuzionale.md)
 * [Change detection](performance/change-detection/README.md)
   * [OnPush](performance/change-detection/onpush.md)
   * [Zone.js](performance/change-detection/zone.js.md)
