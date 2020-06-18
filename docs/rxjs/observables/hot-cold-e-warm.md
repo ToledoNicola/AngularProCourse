@@ -60,7 +60,7 @@ To understand how this is different to the cold observable, lets look at an exam
  * The http request is made outside of the subscription function, 
  * and so it executes eagerly rather than lazily.
 */
-const responsePromise = fetch('someUrl'); // Producer
+const responsePromise = fetch('someUrl'); // <-- Producer
 
 const subscriptionFn = observer => {
   responsePromise.then((data) => {
