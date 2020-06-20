@@ -84,7 +84,7 @@ source$.subscribe(response => console.log(response));
 Gli **hot** observable  di solito sono **multicast**, ma in casi rari potrebbero utilizzare un Producer che supporta solo una sottoscrizione alla volta, in quel caso sarebbe **unicast**, ma è sempre possibile trasformarlo in multicast utilizzando un [operatore multicast](../operators/#multicasting-operators) 
 {% endhint %}
 
-#### Trasformare Hot in Cold
+### Trasformare Hot in Cold
 
 Per trasformare un osservabile **Hot** in **Cold**, l'osservabile deve diventare il **Producer**. Nel seguente esempio, creiamo una fabbrica di ob che restituisce una nuovo ob per ogni abbonamento. In questo modo, ogni abbonato otterrà il proprio flusso indipendente
 
