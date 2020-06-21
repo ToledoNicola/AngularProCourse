@@ -125,7 +125,7 @@ source$.subscribe(response => console.log(response));
 * Values emitted by the observable are not shared between observers \(ie. ogni observer riceve una diversa`response` object\). An Observable which behaves in this way is known as **unicast**.
 
 {% hint style="info" %}
-è possibile trasformare un observable **cold** in **hot** utilizzando un [subject](../subject.md) che si comporta come man-in-the-middle oppure un [multicasting operator ](../operators/#multicasting-operators)
+è possibile trasformare un observable **cold** in **hot** utilizzando un [subject](../subject/) che si comporta come man-in-the-middle oppure un [multicasting operator ](../operators/#multicasting-operators)
 {% endhint %}
 
 ### Hot Observable <a id="hot-observable"></a>
